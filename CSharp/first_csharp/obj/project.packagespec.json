@@ -1,0 +1,28 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "C:\\Users\\erics\\VSCodeProjects\\CSharp\\first_csharp\\first_csharp.csproj",
+    "projectName": "first_csharp",
+    "projectPath": "C:\\Users\\erics\\VSCodeProjects\\CSharp\\first_csharp\\first_csharp.csproj",
+    "outputPath": "C:\\Users\\erics\\VSCodeProjects\\CSharp\\first_csharp\\obj\\",
+    "projectStyle": "PackageReference",
+    "originalTargetFrameworks": [
+      "netcoreapp2.0"
+    ],
+    "frameworks": {
+      "netcoreapp2.0": {
+        "projectReferences": {}
+      }
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": {
+          "target": "Package",
+          "version": "2.0.0"
+        }
+      }
+    }
+  }
+}

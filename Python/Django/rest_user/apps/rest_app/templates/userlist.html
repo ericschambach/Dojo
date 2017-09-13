@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/rest_app/CSS/rest_app.css">
+        <title>Users</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <table>
+                <thead>
+                    <td>id</td>
+                    <td>Full Name</td>
+                    <td>Email</td>
+                    <td>Created At</td>
+                    <td>Actions</td>
+                </thead>
+                {% for user in results %}
+                <tbody>
+                    <td>{{user.id}}</td>
+                    <td>{{user.first_name}} {{user.last_name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.created_at}}</td>
+                    <td>
+                        <a href="users/{{user.id}}">Show</a>
+                        <a href="users/{{user.id}}/edit">Edit</a>
+                        <a href="users/{{user.id}}/destroy">Delete</a>
+                    </td>
+                </tbody>
+                {% endfor %}
+            </table>
+            <hr>
+            <a href="/users/new">Add a new user</a>
+        </div>
+    </body>
+</html>

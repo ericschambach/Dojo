@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/reviewer_app/CSS/reviewer.css">
+        <title>Home Page</title>
+    </head>
+     <body>
+        <h6><a href="/clear">Log out</a><a href="/books/add">Add New Book</a></h6>
+        <h1>Success! Welcome, {{name}}!</h1><br>
+        <div id='book_reviews' class='review_main'>
+            <h3>Recent Book Reviews:</h3><br><br>
+            {% for review in reviews %}
+                <h4><a href="/books/{{review.book.id}}">{{review.book.title}}</a></h4>
+                <h5>Rating: {{review.rating}}</h5>
+                <p><a href="/users/{{review.user.id}}">{{review.user.first_name}}</a> says: {{review.review}}</p>
+                <h6>Posted on: {{review.created_at}}</h6><br>
+            {% endfor %}
+        </div>
+        <div id='other_reviews' class='review_main'>
+            <h3>Other books with reviews:</h3>
+            <div id='other_reviews_box'>
+                 {% for i in remaining_reviews %}
+                 {% if i.id not in filtered %}
+                 <p><a href="/books/{{i.id}}">{{i.title}}</a></p>
+                 {% endif %}
+                 {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

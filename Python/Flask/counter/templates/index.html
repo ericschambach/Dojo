@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Counter Exercise</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <form action='/process' method="POST">
+                <h1>COUNTER:</h1>
+                <h3>{{template_count}}</h3><br>
+                <input type="submit" value="Add View"></input>
+            </form>
+            <form action='/reset_views'>
+                 <input type="submit" value="Reset Views"></input>
+            </form>
+        </div>
+    </body>
+</html>

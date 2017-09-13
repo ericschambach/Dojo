@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/login_registration.css">
+        <title>Email Verification</title>
+    </head>
+     <body>
+        <h2>Site Login</h2>
+<div id="wrapper">
+            <form action="/process" method="POST">
+                <label for="firstname">User Name:</label>
+                <input type="text" name="firstname"><br><br>
+                <label for="lastname">User Name:</label>
+                <input type="text" name="lastname"><br><br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email"><br><br>
+                <label for="password">Password:</label>
+                <input type="password" name="password"><br><br>
+                <label for="pw_confirm">Password Confirmation:</label>
+                <input type="password" name="pw_confirm"><br><br>
+                <input type="submit" value="Button"> 
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p class='red'>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </form>
+    </body>
+</html>

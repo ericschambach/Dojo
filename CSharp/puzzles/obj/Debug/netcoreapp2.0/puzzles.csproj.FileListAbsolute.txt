@@ -1,0 +1,10 @@
+C:\Users\erics\VSCodeProjects\CSharp\puzzles\bin\Debug\netcoreapp2.0\puzzles.deps.json
+C:\Users\erics\VSCodeProjects\CSharp\puzzles\bin\Debug\netcoreapp2.0\puzzles.runtimeconfig.json
+C:\Users\erics\VSCodeProjects\CSharp\puzzles\bin\Debug\netcoreapp2.0\puzzles.runtimeconfig.dev.json
+C:\Users\erics\VSCodeProjects\CSharp\puzzles\bin\Debug\netcoreapp2.0\puzzles.dll
+C:\Users\erics\VSCodeProjects\CSharp\puzzles\bin\Debug\netcoreapp2.0\puzzles.pdb
+C:\Users\erics\VSCodeProjects\CSharp\puzzles\obj\Debug\netcoreapp2.0\puzzles.csproj.CoreCompileInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\puzzles\obj\Debug\netcoreapp2.0\puzzles.AssemblyInfoInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\puzzles\obj\Debug\netcoreapp2.0\puzzles.AssemblyInfo.cs
+C:\Users\erics\VSCodeProjects\CSharp\puzzles\obj\Debug\netcoreapp2.0\puzzles.dll
+C:\Users\erics\VSCodeProjects\CSharp\puzzles\obj\Debug\netcoreapp2.0\puzzles.pdb

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/reviewer_app/CSS/reviewer.css">
+        <title>Add Book and Review</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id='book_info' class='main'>
+                <a href="/books">Home</a><a href="/clear">Log Out</a>
+                <h2>Add a New Title and a Review:</h2>
+                <form action="/book_process" method="POST">
+                    {% csrf_token %}
+                    <label for='title'>Book Title:</label>
+                    <input type="text" name="title"><br><br>
+                    <h4>Author</h4>
+                    <label for="author_select">Choose from the list:</label>
+                    <select name="author_select">
+                        <option disabled selected value> -- select an option -- </option>
+                        {% for i in results %}
+                        <option class='author_select'>{{i}}</option>
+                        {% endfor %}
+                    </select><br>
+                    <label for="new_author">Or add a new author:</label>
+                    <input type="text" name="new_author"><br><br>
+                    <label for="review">Review:</label>
+                    <textarea name="review"></textarea><br><br>
+                    <label for="review">Rating:</label>
+                    <select name='rating'>
+                        <option disabled selected value> -- select an option -- </option>
+                        {% for i in rating %}
+                        <option class='rating'>{{i}}</option>
+                        {% endfor %}
+                    </select><br><br>
+                    <input type="submit" value="Add Book and Review">
+                </form>
+                {% if messages %}
+                    <ul class="messages">
+                        {% for msg in messages %}       
+                            <h6 class='mess'>- {{msg.message}}</h6>
+                        {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

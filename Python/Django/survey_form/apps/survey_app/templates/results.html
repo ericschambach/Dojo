@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Survey Validation</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Submited Info:</h1>
+            <label>Username:</label>
+            {{html_username}}<br>
+            <label>Location:</label>
+            {{html_location}}<br>
+            <label>Language:</label>
+            {{html_language}}<br>
+            <label>Description:</label>
+            {{html_description}}
+            <form action='/clear' method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Go Back">  
+            </form>
+        </div>
+    </body>
+</html>

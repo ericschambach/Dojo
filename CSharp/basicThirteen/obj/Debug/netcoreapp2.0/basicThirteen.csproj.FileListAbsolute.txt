@@ -1,0 +1,10 @@
+C:\Users\erics\VSCodeProjects\CSharp\basicThirteen\obj\Debug\netcoreapp2.0\basicThirteen.csproj.CoreCompileInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\basicThirteen\obj\Debug\netcoreapp2.0\basicThirteen.AssemblyInfoInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\basicThirteen\obj\Debug\netcoreapp2.0\basicThirteen.AssemblyInfo.cs
+C:\Users\erics\VSCodeProjects\CSharp\basicThirteen\bin\Debug\netcoreapp2.0\basicThirteen.deps.json
+C:\Users\erics\VSCodeProjects\CSharp\basicThirteen\bin\Debug\netcoreapp2.0\basicThirteen.runtimeconfig.json
+C:\Users\erics\VSCodeProjects\CSharp\basicThirteen\bin\Debug\netcoreapp2.0\basicThirteen.runtimeconfig.dev.json
+C:\Users\erics\VSCodeProjects\CSharp\basicThirteen\bin\Debug\netcoreapp2.0\basicThirteen.dll
+C:\Users\erics\VSCodeProjects\CSharp\basicThirteen\bin\Debug\netcoreapp2.0\basicThirteen.pdb
+C:\Users\erics\VSCodeProjects\CSharp\basicThirteen\obj\Debug\netcoreapp2.0\basicThirteen.dll
+C:\Users\erics\VSCodeProjects\CSharp\basicThirteen\obj\Debug\netcoreapp2.0\basicThirteen.pdb

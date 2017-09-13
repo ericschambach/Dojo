@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Quotes</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h5><a href="/quotes">Dashboard</a> | <a href="/clear">Log Out</a></h5>
+            <h2>Posts by {{user.alias}}</h2>
+            <h3>Count: {{count}}</h3>
+            <br><br>
+            {% for i in creator %}
+                <p>{{i.author}}: {{i.text}}</p><br><br>
+            {% endfor %}
+        </div>
+    </body>
+</html>

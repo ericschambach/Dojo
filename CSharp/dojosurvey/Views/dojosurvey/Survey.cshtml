@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Survey</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="~/css/style.css"/> -->
+    </head>
+    <body>
+        <div id="wrapper">
+            @foreach(var error in ViewBag.Errors)
+            {
+                <p class="red">@error</p>
+            }
+            <form action="process" method="POST">
+                <label for="userName">User Name:</label>
+                <input type="text" name="userName"><br><br>
+                <label for="userLocation">Dojo Location:</label>
+                <select name="userLocation">
+                    <option selected hidden>Choose here</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="Dallas">Dallas</option>
+                </select><br><br>
+                <label for="userLanguage">Favorite Language:</label>
+                <select name="userLanguage">
+                    <option selected hidden>Choose here</option>
+                    <option value="Chicago">Python</option>
+                    <option value="Seattle">JavaScript</option>
+                    <option value="Dallas">C#</option>
+                </select><br><br>
+                <p>Comment (Optional):</p>
+                <textarea name="userComment"></textarea><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>

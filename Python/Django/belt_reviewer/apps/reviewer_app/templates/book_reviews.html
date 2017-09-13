@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/reviewer_app/CSS/reviewer.css">
+        <title>Add Book and Review</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class='main_sections'>
+            <a href="/books">Home</a><a href="/clear">Log Out</a>
+            <h2>Book Title: {{book_results.title}}</h2>
+            <h3>Author: {{book_results.author}}</h3><br><br><br>
+            <h3>Reviews</h3>
+            {% for review in review_results %}
+                <hr>
+                <h5>Rating: {{review.rating}}</h5>
+                <p><a href="/users/{{review.user.id}}">{{review.user.first_name}}</a> says: {{review.review}}</p>
+                <h6>Posted on: {{review.created_at}}
+            {% endfor %}
+            </div>
+            <div class='main_sections'>
+                <form action="/review_process" method='POST'>
+                {% csrf_token %}
+                    <label for="review">Review:</label>
+                    <textarea name="review"></textarea><br><br>
+                    <label for="review">Rating:</label>
+                    <select name='rating'>
+                        <option disabled selected value> -- select an option -- </option>
+                        {% for i in ratings %}
+                        <option class='rating'>{{i}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="hidden" name="book_id" value='{{book_results.id}}'/>
+                    <input type="submit" value='Submit Review'>
+                </form>
+                {% if messages %}
+                    <ul class="messages">
+                        {% for msg in messages %}       
+                            <h6 class='mess'>- {{msg.message}}</h6>
+                        {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

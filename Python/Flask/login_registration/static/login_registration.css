@@ -1,0 +1,39 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper{
+    width: 970px;
+    margin:auto;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    align-content: center;
+    padding:30px 5px;
+}
+/* #header{
+    margin-bottom: 30px;
+} */
+/* .results{
+    height: 300px;
+    width: 300px;
+    color: white; 
+    margin-bottom: 30px;
+    display: inline-block;
+} */
+#wrapper form{
+    display: block;
+}
+#clear{
+    margin-top: 60%;
+    color:black;
+}
+.red{
+    color:red;
+}
+/* #low, #high{
+    background-color: red;
+}
+#won{
+    background-color: green;
+}  */

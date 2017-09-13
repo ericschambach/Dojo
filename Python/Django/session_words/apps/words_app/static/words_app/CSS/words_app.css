@@ -1,0 +1,76 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper{
+    width: 970px;
+    margin:auto;
+    font-family: Arial, Helvetica, sans-serif;
+    align-content: center;
+    padding:30px;
+}
+#results_side{
+    padding-top: 30px;
+    vertical-align: top;
+    display:inline-block;
+    width:47%;
+}
+#form_side{
+    vertical-align: top;
+    display:inline-block;
+    width:47%;
+}
+.blue{
+    color:blue;
+}
+.green{
+    color:green;
+}
+.red{
+    color:red;
+}
+h6{
+    display:inline;
+}
+#testing {
+    width: 100%;
+    height: 180px;
+    overflow-y: auto;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    margin-top:15px;
+}
+/* #header{
+    text-align: left;
+}
+.options{   
+    display: inline-block;
+    border: 2px solid black;
+    width:160px;
+    height:150px;
+    margin: 20px 40px 20px 0px;
+    vertical-align: top;
+    text-align: center;
+}
+.options :last-child{
+    margin-left:0px;
+}
+.options form{
+    margin-top:35px;
+}
+#description{
+    width: 85%;
+    height: 200px;
+    overflow-y: auto;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    padding-left: 15px;
+}
+.green{
+    color:green;
+}
+.red{
+    color:red;
+} */

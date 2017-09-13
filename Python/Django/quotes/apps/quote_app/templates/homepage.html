@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/quote_app/CSS/quote.css">
+        <title>Quotes</title>
+    </head>
+    <body>
+        <div id="wrapper">  
+            <div class='main_sections'>
+                <a href="/clear">Log Out</a>
+                <h2>Welcome: {{alias}}</h2> 
+                <hr>
+                <div class='quotes'>
+                    <h5>Quotable Quotes</h5>
+                    {% for i in quotes %}
+                    {% if i not in favorites%}
+                    <h5>{{i.author}}: {{i.text}}</h5>
+                    <h6>Posted by: <a href="/users/{{i.creator.id}}">{{i.creator.alias}}</a></h6>
+                    <form action="add_to_list" method='POST'>
+                        {% csrf_token %}
+                        <input type="hidden" name='user_id' value='{{id}}'>
+                        <input type="hidden" name='quote_id' value='{{i.id}}'>
+                        <input type="submit" value='Add to My List' >
+                    </form>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class='main_sections'>
+                <h5>Your favorites</h5>
+                {% for i in favorites %}
+                <div id='liked posts'>
+                    <h5>{{i.quote.author}}: {{i.quote.text}}</h5>
+                    <h6>Posted by: <a href="/users/{{i.creator.id}}">{{i.creator.alias}}</a></h6>
+                </div>
+                {% endfor %}
+                <form action="/add_quote" method='POST'>
+                {% csrf_token %}
+                    <h5>Contribute a Quote</h5>
+                    <label for="new_quote_author">Quoted By:</label>
+                    <input type="text" name='new_quote_author'><br>
+                    <label for="quote_message">Message:</label>
+                    <textarea name="quote_message"></textarea><br><br>
+                    <input type="hidden" name="book_id" value='{{book_results.id}}'/>
+                    <input type="submit" value='Submit'>
+                </form>
+                {% if messages %}
+                    <ul class="messages">
+                        {% for msg in messages %}       
+                            <h6 class='mess'>- {{msg.message}}</h6>
+                        {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>

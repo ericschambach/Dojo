@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Index</title>
+        <!-- // In this context '~' refers to the wwwroot folder -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/CSS/dachi.css"/>
+    </head>
+    <body>
+        <div id='wrapper'>
+            @{
+                if(ViewBag.happiness > 100 && ViewBag.fullness > 100)
+                {
+                    <h4>Fullness: @ViewBag.fullness</h4>
+                    <h4>Happiness: @ViewBag.happiness</h4>
+                    <h4>Meals: @ViewBag.meals</h4>
+                    <h4>Energy: @ViewBag.energy</h4><br>
+                    <div id='main'>
+                        <img  src="~/img/won.jpg" alt="An image">
+                        <h5>Congratulations! You have won!</h5>
+                    </div>
+                    <form action="/clear" method='POST' class='myform'>
+                        <input type='submit' value='Restart?'/>
+                    </form>
+                }
+                else if(ViewBag.happiness <= 0 || ViewBag.happiness <= 0 || ViewBag.energy <= 0)
+                {
+                    <h4>Fullness: 0</h4>
+                    <h4>Happiness: 0</h4>
+                    <h4>Meals: @ViewBag.meals</h4>
+                    <h4>Energy: @ViewBag.energy</h4><br>
+                    <div id='main'>
+                        <img  src="~/img/dead.jpg" alt="An image">
+                        <h5>Your Dojodochi has passed away</h5>
+                    </div>
+                    <form action="/clear" method='POST' class='myform'>
+                        <input type='submit' value='Restart?'/>
+                    </form>
+                }
+                else
+                {
+                    <h4>Fullness: @ViewBag.fullness</h4>
+                    <h4>Happiness: @ViewBag.happiness</h4>
+                    <h4>Meals: @ViewBag.meals</h4>
+                    <h4>Energy: @ViewBag.energy</h4><br>
+                    <div id='main'>
+                        <img  src="@Url.Content(ViewBag.picture)" alt="An image">
+                        <h5>@ViewBag.status</h5>
+                    </div>
+                    <form action="/feed" method='POST' class='myform'>
+                        <input type='submit' value='Feed'/>
+                    </form>
+                    <form action="/play" method='POST' class='myform'>
+                        <input type='submit' value='Play'/>
+                    </form>
+                    <form action="/work" method='POST' class='myform'>
+                        <input type='submit' value='Work'/>
+                    </form>
+                    <form action="/sleep" method='POST' class='myform'>
+                        <input type='submit' value='Sleep'/>
+                    </form>
+                }
+            }
+        </div>
+    </body>
+</html>

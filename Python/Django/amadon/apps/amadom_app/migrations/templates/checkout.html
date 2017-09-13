@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Amadom Checkout</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Thank you for your business!</h1>
+            <h2>We charged your credit card for ${{html_price}}</h2>
+            <h2>You have ordered {{html_total_quantity}} item(s) so far and spent</h2>
+            <h2>${{html_total_price}} with Amadom.com!</h2><br><br>
+            <a href='/'>Back to product's page</a><br><br>
+            <form action="/clear" method='POST'>
+                {% csrf_token %}
+                <input type="submit" value='Clear List'>
+            </form>
+        </div>
+    </body>
+</html>

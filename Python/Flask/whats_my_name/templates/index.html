@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='whats_my_name.css') }}">
+      <title>What's My Name</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <h2>Please fill the form below:</h2>
+            <form action="/process" method="POST">
+                <input type="text" name="user_username">
+                <input type="password" name="user_password">
+                <input type="submit" name="submit_button" value="submit">
+            </form> 
+        </div>
+    </body>
+</html>

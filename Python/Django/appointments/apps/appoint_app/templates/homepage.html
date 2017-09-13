@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/appoint_app/CSS/appointments.css">
+        <title>What's Up</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h6><a href="/clear">Log out</a></h6>
+            <h1>Hello, {{logged.name}}!</h1><br>
+            <div class='trip_main'>
+                <h3>Here are your appointmentds for today, {{today}}:</h3><br><br>
+                <table dir="ltr" width="500" border="1">
+                    <colgroup width="50%" />
+                    <colgroup id="colgroup" class="colgroup" align="center" 
+                    valign="middle" title="title" width="1*" 
+                    span="2" style="background:#ddd;" />
+                    <thead>
+                        <tr>
+                            <th scope="col">Tasks</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in appoint %}
+                    {% if i.appointment != 'Not' %}
+                        <tr>
+                            <td>{{i.task}}</td>
+                            <td>{{i.appointment}}</td>
+                            <td>{{i.status}}</td>
+                            <td>
+                                {% if i.appointment.time > time_now %}
+                                <form action="/appointments/{{i.id}}" method='POST'>
+                                    {% csrf_token %}
+                                    <input type="submit" value='Update'>
+                                </form> 
+                                <form action="/delete_appointment" method='POST'>
+                                    {% csrf_token %}
+                                    <input type="hidden" name='app_id' value='{{i.id}}'>
+                                    <input type="submit" value='Delete'>
+                                </form>  
+                                {% endif %}      
+                            </td>
+                        </tr>
+                    {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table><br><br>
+                <h3>Your other appointments:</h3><br><br>
+                <table dir="ltr" width="500" border="1">
+                    <colgroup width="50%" />
+                    <colgroup id="colgroup" class="colgroup" align="center" 
+                    valign="middle" title="title" width="1*" 
+                    span="2" style="background:#ddd;" />
+                    <thead>
+                        <tr>
+                            <th scope="col">Tasks</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in later %}
+                    {% if i.appointment != 'Not' %}
+                        <tr>
+                            <td>{{i.task}}</td>
+                            <td>{{i.appointment.date}}</td>
+                            <td>{{i.appointment.time}}</td>
+                        </tr>
+                    {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table><br><br>
+            </div>
+            <div class='main_sections'>
+                <h3>Add appointment</h3>
+                <form action="/add_appointment" method='POST'>
+                    {% csrf_token %}
+                    <label for="app_date">Date:</label>
+                    <input type='date' name='app_date'><br><br>
+                    <label for="app_time">Time:</label>
+                    <input type='time' name='app_time'><br><br>
+                    <label for="tasks">Tasks:</label>
+                    <input type='hidden' name='app_id' value='{{i.id}}'>
+                    <input type='text' name='tasks'><br><br>
+                    <input type="submit" value='Add'>
+                </form>
+            {% if messages %}
+            <ul class="messages">
+            {% for msg in messages %}       
+            <h6 class='mess'>- {{msg.message}}</h6>
+            {% endfor %}
+            {% endif %} 
+            </div>
+        </div>
+    </body>
+</html>

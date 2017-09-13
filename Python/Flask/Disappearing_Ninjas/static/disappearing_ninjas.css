@@ -1,0 +1,17 @@
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper{
+    width: 970px;
+    margin:auto;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:15px;
+    padding-bottom:200px;
+    align-content: center;
+}
+img {
+
+    height: 500px;
+    width: 200px;    
+}

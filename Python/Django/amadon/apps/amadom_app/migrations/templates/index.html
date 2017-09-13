@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Amadon</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <table id="t01">
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th> 
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td>Dojo T-Shirt</td>
+                    <td>$19.99</td> 
+                    <td>
+                        <form action='/process' method='post'>
+                            {% csrf_token %}
+                            <select name='quantity'>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <input type='hidden' name='price' value='19.99' />
+                            <input type='submit' value='Buy!' />
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dojo T-Shirt</td>
+                    <td>$29.99</td> 
+                    <td>
+                        <form action='/process' method='post'>
+                            {% csrf_token %}
+                            <select name='quantity'>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <input type='hidden' name='price' value='29.99' />
+                            <input type='submit' value='Buy!' />
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dojo T-Shirt</td>
+                    <td>$4.99</td> 
+                    <td>
+                        <form action='/process' method='post'>
+                            {% csrf_token %}
+                            <select name='quantity'>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                            <input type='hidden' name='price' value='4.99' />
+                            <input type='submit' value='Buy!' />
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Dojo T-Shirt</td>
+                    <td>$49.99</td> 
+                    <td>
+                        <form action='/process' method='post'>
+                            {% csrf_token %}
+                            <select name='quantity'>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                            </select>
+                            <input type='hidden' name='price' value='49.99' />
+                            <input type='submit' value='Buy!' />
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

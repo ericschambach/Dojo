@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/ninja_app/CSS/ninja_app.css">
+        <title>Ninja Gold</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id='header'>
+                <label>Your gold:</label>
+                {{html_gold}}
+            </div>
+            <div id='farm' class='options'>
+                <h3>Farm</h3>
+                <h6>(earns 10-20 coins)</h6>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="building" value="farm" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div id='cave' class='options'>
+                <h3>Cave</h3>
+                <h6>(earns 5-10 coins)</h6>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="building" value="cave" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div id='house' class='options'>
+                <h3>House</h3>
+                <h6>(earns 2-5 coins)</h6>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="building" value="house" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div id='casino' class='options'>
+                <h3>Casino</h3>
+                <h6>(earns/takes 0-50 coins)</h6>
+                <form action="/process_money" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="building" value="casino" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <form>
+                <h5>Activities:</h5>
+            </form>
+            <form action='/clear' method="POST">
+                {% csrf_token %}
+                <div id="description">
+                {% for x in html_bet %}
+                {% if 'lost' not in x %}         
+                <h6 class='green'>{{x}}</h6>
+                {% endif %}
+                {% if 'lost' in x %}         
+                <h6 class='red'>{{x}}</h6>
+                {% endif %}
+                {% endfor %}          
+                </div>
+                <input type="submit" value="Start Over">  
+            </form>
+        </div>
+    </body>
+</html> 

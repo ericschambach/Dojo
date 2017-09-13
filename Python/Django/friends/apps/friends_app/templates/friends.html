@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/friends_app/CSS/friends.css">
+        <title>Friends</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h6><a href="/clear">Log out</a></h6>
+            <h1>Hello, {{you.alias}}!</h1><br>
+            <div class='friends'>
+                <h3>Here is the list of your friends:</h3><br><br>
+                <table dir="ltr" width="500" border="1">
+                    <colgroup width="50%" />
+                    <colgroup id="colgroup" class="colgroup" align="center" 
+                    valign="middle" title="title" width="1*" 
+                    span="2" style="background:#ddd;" />
+                    <thead>
+                        <tr>
+                            <th scope="col">Alias</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for i in connections %}
+                            <td>{{i.alias}}</td>                            
+                            <td>
+                                <a href="/user/{{i.id}}">View Profile</a>     
+                                <a href="/remove_connection/{{i.id}}">Remove as Friend</a>     
+                            </td>
+                            {% endfor %}  
+                        </tr>
+                    </tbody> 
+                </table><br><br>
+                {% if conn_count == 0 %}
+                    <td><h5>You don't have friends yet.</h5><td><br><br>
+                {% endif %}
+                <h3>Other users not on your friends' list:</h3><br><br>
+                <table dir="ltr" width="500" border="1">
+                    <colgroup width="50%" />
+                    <colgroup id="colgroup" class="colgroup" align="center" 
+                    valign="middle" title="title" width="1*" 
+                    span="2" style="background:#ddd;" />
+                    <thead>
+                        <tr>
+                            <th scope="col">Alias</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in non_connections %}
+                        <tr>
+                            <td><a href="user/{{i.id}}">{{i.alias}}</a></td>
+                            <td>
+                                <form action="/make_connection" method='POST'>
+                                    {% csrf_token %}
+                                    <input type="hidden" name='connection_id' value='{{i.id}}'>
+                                    <input type="submit" value='Add as Friend'>
+                                </form> 
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table><br><br>
+            </div>
+        </div>
+    </body>
+</html>

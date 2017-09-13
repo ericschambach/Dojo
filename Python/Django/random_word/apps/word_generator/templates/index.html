@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Random Word Generator</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h2>Random Word (Attempt #{{html_count}})</h2>
+             <h3>{{html_unique_id}}</h3> 
+            <form action="/" method='POST'>
+                {% csrf_token %}
+                <input type="submit" name='generate' value='Generate'>
+            </form>
+        </div>
+    </body>
+</html>

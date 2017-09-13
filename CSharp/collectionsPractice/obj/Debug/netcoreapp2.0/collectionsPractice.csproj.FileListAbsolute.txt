@@ -1,0 +1,10 @@
+C:\Users\erics\VSCodeProjects\CSharp\collectionsPractice\bin\Debug\netcoreapp2.0\collectionsPractice.deps.json
+C:\Users\erics\VSCodeProjects\CSharp\collectionsPractice\bin\Debug\netcoreapp2.0\collectionsPractice.runtimeconfig.json
+C:\Users\erics\VSCodeProjects\CSharp\collectionsPractice\bin\Debug\netcoreapp2.0\collectionsPractice.runtimeconfig.dev.json
+C:\Users\erics\VSCodeProjects\CSharp\collectionsPractice\bin\Debug\netcoreapp2.0\collectionsPractice.dll
+C:\Users\erics\VSCodeProjects\CSharp\collectionsPractice\bin\Debug\netcoreapp2.0\collectionsPractice.pdb
+C:\Users\erics\VSCodeProjects\CSharp\collectionsPractice\obj\Debug\netcoreapp2.0\collectionsPractice.csproj.CoreCompileInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\collectionsPractice\obj\Debug\netcoreapp2.0\collectionsPractice.AssemblyInfoInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\collectionsPractice\obj\Debug\netcoreapp2.0\collectionsPractice.AssemblyInfo.cs
+C:\Users\erics\VSCodeProjects\CSharp\collectionsPractice\obj\Debug\netcoreapp2.0\collectionsPractice.dll
+C:\Users\erics\VSCodeProjects\CSharp\collectionsPractice\obj\Debug\netcoreapp2.0\collectionsPractice.pdb

@@ -1,0 +1,10 @@
+C:\Users\erics\VSCodeProjects\CSharp\mysqlOne\bin\Debug\netcoreapp2.0\mysqlOne.deps.json
+C:\Users\erics\VSCodeProjects\CSharp\mysqlOne\bin\Debug\netcoreapp2.0\mysqlOne.runtimeconfig.json
+C:\Users\erics\VSCodeProjects\CSharp\mysqlOne\bin\Debug\netcoreapp2.0\mysqlOne.runtimeconfig.dev.json
+C:\Users\erics\VSCodeProjects\CSharp\mysqlOne\bin\Debug\netcoreapp2.0\mysqlOne.dll
+C:\Users\erics\VSCodeProjects\CSharp\mysqlOne\bin\Debug\netcoreapp2.0\mysqlOne.pdb
+C:\Users\erics\VSCodeProjects\CSharp\mysqlOne\obj\Debug\netcoreapp2.0\mysqlOne.csproj.CoreCompileInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\mysqlOne\obj\Debug\netcoreapp2.0\mysqlOne.AssemblyInfoInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\mysqlOne\obj\Debug\netcoreapp2.0\mysqlOne.AssemblyInfo.cs
+C:\Users\erics\VSCodeProjects\CSharp\mysqlOne\obj\Debug\netcoreapp2.0\mysqlOne.dll
+C:\Users\erics\VSCodeProjects\CSharp\mysqlOne\obj\Debug\netcoreapp2.0\mysqlOne.pdb

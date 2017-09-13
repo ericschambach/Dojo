@@ -1,0 +1,10 @@
+C:\Users\erics\VSCodeProjects\CSharp\helloTest\bin\Debug\netcoreapp2.0\helloTest.deps.json
+C:\Users\erics\VSCodeProjects\CSharp\helloTest\bin\Debug\netcoreapp2.0\helloTest.runtimeconfig.json
+C:\Users\erics\VSCodeProjects\CSharp\helloTest\bin\Debug\netcoreapp2.0\helloTest.runtimeconfig.dev.json
+C:\Users\erics\VSCodeProjects\CSharp\helloTest\bin\Debug\netcoreapp2.0\helloTest.dll
+C:\Users\erics\VSCodeProjects\CSharp\helloTest\bin\Debug\netcoreapp2.0\helloTest.pdb
+C:\Users\erics\VSCodeProjects\CSharp\helloTest\obj\Debug\netcoreapp2.0\helloTest.csproj.CoreCompileInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\helloTest\obj\Debug\netcoreapp2.0\helloTest.AssemblyInfoInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\helloTest\obj\Debug\netcoreapp2.0\helloTest.AssemblyInfo.cs
+C:\Users\erics\VSCodeProjects\CSharp\helloTest\obj\Debug\netcoreapp2.0\helloTest.dll
+C:\Users\erics\VSCodeProjects\CSharp\helloTest\obj\Debug\netcoreapp2.0\helloTest.pdb

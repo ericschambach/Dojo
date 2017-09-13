@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Random Passcode Generator</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="~/css/style.css"/>
+    </head>
+    <body>
+        <h1>Random Passcode (passcode # @ViewBag.passcount)</h1><br><br>
+        <h3>@ViewBag.passcode</h3><br><br>
+        <form action='/' method='POST'>
+        <input type='submit' value='Generate'/>
+        </form>
+    </body>
+</html>

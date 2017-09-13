@@ -1,0 +1,10 @@
+C:\Users\erics\VSCodeProjects\CSharp\dojodachi\bin\Debug\netcoreapp2.0\dojodachi.deps.json
+C:\Users\erics\VSCodeProjects\CSharp\dojodachi\bin\Debug\netcoreapp2.0\dojodachi.runtimeconfig.json
+C:\Users\erics\VSCodeProjects\CSharp\dojodachi\bin\Debug\netcoreapp2.0\dojodachi.runtimeconfig.dev.json
+C:\Users\erics\VSCodeProjects\CSharp\dojodachi\bin\Debug\netcoreapp2.0\dojodachi.dll
+C:\Users\erics\VSCodeProjects\CSharp\dojodachi\bin\Debug\netcoreapp2.0\dojodachi.pdb
+C:\Users\erics\VSCodeProjects\CSharp\dojodachi\obj\Debug\netcoreapp2.0\dojodachi.csproj.CoreCompileInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\dojodachi\obj\Debug\netcoreapp2.0\dojodachi.AssemblyInfoInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\dojodachi\obj\Debug\netcoreapp2.0\dojodachi.AssemblyInfo.cs
+C:\Users\erics\VSCodeProjects\CSharp\dojodachi\obj\Debug\netcoreapp2.0\dojodachi.dll
+C:\Users\erics\VSCodeProjects\CSharp\dojodachi\obj\Debug\netcoreapp2.0\dojodachi.pdb

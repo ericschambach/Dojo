@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/appoint_app/CSS/appointments.css">
+        <title>Update Appointment</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h5><a href="/appointments">Dashboard  |  </a><a href="/clear">Logout  |</a><br><br><br><br>
+
+            <form action="/update_process" method='POST'>
+                {% csrf_token %}
+                <label for="tasks">Tasks:</label>
+                <input type='text' name='tasks' placeholder="{{appointment.task}}"><br><br>
+                <label for="status">Status:</label>
+                <select name='status'>
+                <option disabled selected value> {{appointment.status}} </option>
+                <option class='status'>Done</option>
+                <option class='status'>Missed</option>
+                <option class='status'>Pending</option>
+                </select><br><br>
+                <label for="app_date">Date:</label>
+                <input type='date' name='app_date'><br><br>
+                <label for="app_time">Time:</label>
+                <input type='time' name='app_time'><br><br>
+                <input type='hidden' name='app_id' value="{{appointment.id}}"><br><br>
+                <input type="submit" value='Update'>
+            </form>
+            {% if messages %}
+                <ul class="messages">
+                {% for msg in messages %}       
+                    <h6 class='mess'>- {{msg.message}}</h6>
+                {% endfor %}
+            {% endif %} 
+        </div>
+    </body>
+</html>

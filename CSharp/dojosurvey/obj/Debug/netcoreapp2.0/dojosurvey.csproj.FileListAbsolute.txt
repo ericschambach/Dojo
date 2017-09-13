@@ -1,0 +1,10 @@
+C:\Users\erics\VSCodeProjects\CSharp\dojosurvey\bin\Debug\netcoreapp2.0\dojosurvey.deps.json
+C:\Users\erics\VSCodeProjects\CSharp\dojosurvey\bin\Debug\netcoreapp2.0\dojosurvey.runtimeconfig.json
+C:\Users\erics\VSCodeProjects\CSharp\dojosurvey\bin\Debug\netcoreapp2.0\dojosurvey.runtimeconfig.dev.json
+C:\Users\erics\VSCodeProjects\CSharp\dojosurvey\bin\Debug\netcoreapp2.0\dojosurvey.dll
+C:\Users\erics\VSCodeProjects\CSharp\dojosurvey\bin\Debug\netcoreapp2.0\dojosurvey.pdb
+C:\Users\erics\VSCodeProjects\CSharp\dojosurvey\obj\Debug\netcoreapp2.0\dojosurvey.csproj.CoreCompileInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\dojosurvey\obj\Debug\netcoreapp2.0\dojosurvey.AssemblyInfoInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\dojosurvey\obj\Debug\netcoreapp2.0\dojosurvey.AssemblyInfo.cs
+C:\Users\erics\VSCodeProjects\CSharp\dojosurvey\obj\Debug\netcoreapp2.0\dojosurvey.dll
+C:\Users\erics\VSCodeProjects\CSharp\dojosurvey\obj\Debug\netcoreapp2.0\dojosurvey.pdb

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Add Plan</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id='book_info' class='main'>
+            <a href="/travels">Home</a><a href="/clear">Log Out</a>
+            <h2>Add a Trip:</h2>
+            <form action="/travels_process" method="POST">
+                {% csrf_token %}
+                <label for='destination'>Destination:</label>
+                <input type="text" name="destination"><br><br>
+                <label for="description">Description:</label>
+                <input type="text" name="description"><br><br>
+                <label for="travel_date_from">Travel Date From:</label>
+                <input type="date" name="travel_date_from"><br><br>
+                <label for="travel_date_to">Travel Date To:</label>
+                <input type="date" name="travel_date_to"><br><br>
+                <input type="submit" value="Add">
+            </form>
+            {% if messages %}
+            <ul class="messages">
+                {% for msg in messages %}       
+                    <h6 class='mess'>- {{msg.message}}</h6>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </body>
+</html>

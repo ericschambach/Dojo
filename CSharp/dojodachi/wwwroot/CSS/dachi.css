@@ -1,0 +1,26 @@
+/*CSS reset settings here*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#wrapper{
+    width: 970px;
+    margin:auto;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    align-content: center;
+    padding:30px 5px;
+}
+#wrapper h4{
+    display: inline-block;
+    margin-left: 20px;
+}
+.myform{
+    display: inline-block;
+    margin-left: 20px;
+}
+#wrapper img {
+    height:150px;
+    width:150px;
+}
+

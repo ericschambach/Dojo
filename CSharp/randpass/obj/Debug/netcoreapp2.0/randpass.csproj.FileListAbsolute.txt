@@ -1,0 +1,10 @@
+C:\Users\erics\VSCodeProjects\CSharp\randpass\bin\Debug\netcoreapp2.0\randpass.deps.json
+C:\Users\erics\VSCodeProjects\CSharp\randpass\bin\Debug\netcoreapp2.0\randpass.runtimeconfig.json
+C:\Users\erics\VSCodeProjects\CSharp\randpass\bin\Debug\netcoreapp2.0\randpass.runtimeconfig.dev.json
+C:\Users\erics\VSCodeProjects\CSharp\randpass\bin\Debug\netcoreapp2.0\randpass.dll
+C:\Users\erics\VSCodeProjects\CSharp\randpass\bin\Debug\netcoreapp2.0\randpass.pdb
+C:\Users\erics\VSCodeProjects\CSharp\randpass\obj\Debug\netcoreapp2.0\randpass.csproj.CoreCompileInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\randpass\obj\Debug\netcoreapp2.0\randpass.AssemblyInfoInputs.cache
+C:\Users\erics\VSCodeProjects\CSharp\randpass\obj\Debug\netcoreapp2.0\randpass.AssemblyInfo.cs
+C:\Users\erics\VSCodeProjects\CSharp\randpass\obj\Debug\netcoreapp2.0\randpass.dll
+C:\Users\erics\VSCodeProjects\CSharp\randpass\obj\Debug\netcoreapp2.0\randpass.pdb

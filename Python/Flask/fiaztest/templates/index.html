@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <title>THE WORLD</title>
+    </head>
+    <body>
+    <div class="container">
+        <h1>Hello World</h1>
+        <form action='/addvalue' method="POST">
+            <input type="text" name="html_name">
+            <input type="text" name="html_year">
+            <input type="submit">
+        </form>
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th>Country Name</th>
+                    <th>Independence Year</th>
+                    <th>Head of State</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for country in countries %}
+                    <tr>
+                        <td>{{country.name}}</td>
+                        <td>{{country.indep_year}}</td>
+                        <td>{{country.head_of_state}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+    </body>
+</html>

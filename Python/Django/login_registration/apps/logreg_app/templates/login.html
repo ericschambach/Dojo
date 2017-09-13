@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/logreg_app/CSS/login_registration.css">
+        <title>Email Verification</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id='registration' class='main'>
+                <h2>Registration</h2>
+                <form action="/registration" method="POST">
+                    {% csrf_token %}
+                    <label for="first_name">First Name:</label>
+                    <input type="text" name="first_name"><br><br>
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" name="last_name"><br><br>
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email"><br><br>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password"><br><br>
+                    <label for="pw_confirm">Password Confirmation:</label>
+                    <input type="password" name="pw_confirm"><br><br>
+                    <input type="submit" value="Register"> 
+                </form>
+                {% if messages %}
+                    <ul class="messages">
+                        {% for msg in messages %}       
+                            <h6 class='mess'>- {{msg.message}}</h6>
+                        {% endfor %}
+                {% endif %}
+            </div>
+            <hr>
+            <div id='login' class='main'>
+                <h2>Login</h2>
+                <form action="/login" method="POST">
+                    {% csrf_token %}
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email"><br><br>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password"><br><br>
+                    <input type="submit" value="Login"> 
+                </form>
+                {% if messages %}
+                    <ul class="messages">
+                        {% for msg in messages %}       
+                            <h6 class='mess'>- {{msg.message}}</h6>
+                        {% endfor %}
+                {% endif %}
+            </div>    
+        </div>
+    </body>
+</html>

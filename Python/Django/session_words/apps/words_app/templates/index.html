@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/words_app/CSS/words_app.css">
+        <title>Session Words</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id='form_side' class='main_page'>
+                <form action="/process" method='POST'>
+                {% csrf_token %}
+                    <h2>Add a New Word:</h2>
+                    <input type="text" name='new_word'><br><br>
+                    <h4>Choose Color</h4>
+                    <label for="red">Red</label>
+                    <input type="radio" name="color" value="red"><br>
+                    <label for="green">Green</label>
+                    <input type="radio" name="color" value="green"><br>
+                    <label for="color">Blue</label>
+                    <input type="radio" name="color" value="blue" checked='checked'><br><br> 
+                    <!-- <label for="bigfonts">Show in BIG fonts!</label>
+                    <input type="checkbox" name="bigfonts" value="Yes"><br><br> -->
+                    <input type="submit" value='Add to session'>
+                </form>
+            </div>
+            <div id='results_side' class='main_page'>
+                 <form action="/clear" method='POST'>
+                {% csrf_token %}
+                    <input type="submit" value='Clear Session'>
+                    <div id='testing'>
+                        {% for i in listdicts.Word %}           
+                            <h6 >{{i}}</h6><br>
+                        {% endfor %}
+                    </div> 
+                </form>
+            </div> 
+        </div>
+    </body>
+</html>

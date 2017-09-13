@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/rest_app/CSS/rest_app.css">
+        <title>User details</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Edit User {{results.first_name}} {{results.last_name}}</h1><br><br>
+            <h3>Full name: {{results.first_name}} {{results.last_name}}</h3>  
+            <h3>E-mail: {{results.email}}</h3>  
+            <h3>Created at: {{results.created_at}}</h3><br>
+            <h4><a href="{{results.id}}/edit">Edit</a>  |  <a href="{{results.id}}/destroy">Delete</a></h4> 
+        </div>
+    </body>
+</html>

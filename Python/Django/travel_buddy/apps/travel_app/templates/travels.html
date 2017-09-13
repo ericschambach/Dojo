@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/travel_app/CSS/travel_app.css">
+        <title>Travel Dashboard</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h6><a href="/clear">Log out</a><a href="/books/add">Add New Book</a></h6>
+            <h1>Success! Welcome, {{you.name}}!</h1><br>
+            <div class='trip_main'>
+                <h3>Your Trip Schedules:</h3><br><br>
+                <table dir="ltr" width="500" border="1">
+                    <colgroup width="50%" />
+                    <colgroup id="colgroup" class="colgroup" align="center" 
+                    valign="middle" title="title" width="1*" 
+                    span="2" style="background:#ddd;" />
+                    <thead>
+                        <tr>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Time Start Date</th>
+                        <th scope="col">Time End Date</th>
+                        <th scope="col">Plan</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                        {% for trip in trips %}
+                        {% if trip.user.id == you.id %}
+                        <tr>
+                            <td>{{trip.destination}}</td>
+                            <td>{{trip.travel_date_from}}</td>
+                            <td>{{trip.travel_date_to}}</td>
+                            <td><a href="travels/destination/{{trip.id}}">Go</a></td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div><br><br><br>
+        <div class='trip_main'>
+            <h3>Other User's Travel Plans:</h3><br><br>
+            <table dir="ltr" width="500" border="1">
+                <colgroup width="50%" />
+                <colgroup id="colgroup" class="colgroup" align="center" 
+                valign="middle" title="title" width="1*" 
+                span="2" style="background:#ddd;" />
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Time Start Date</th>
+                        <th scope="col">Time End Date</th>
+                        <th scope="col">You Want to Join?</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for trip in trips.traveler %}
+                    {% if trip.user != you.id %}
+                    <tr>
+                        <td>{{trip.traveler.name}}</td>
+                        <td>{{trip.destination}}</td>
+                        <td>{{trip.travel_date_from}}</td>
+                        <td>{{trip.travel_date_to}}</td>
+                        <td>
+                        <form action="travels_join_process" method='POST'>
+                            {% csrf_token %}
+                            <input type="hidden" name="this_trip" value='{{trip.id}}'/>
+                            <input type="submit" name='Join'>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a href="/travels/add">Add Travel Plan</a></h6>
+        </div>
+    </body>
+</html>
