@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>jquery</title>
+        <link rel="stylesheet" type="text/css" href="ninjaCat.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+            $('img').click(function(){
+                $(this).fadeTo( "slow",0 );
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>jQuery - Assignment 2, the return of the Ninja!</h1>
+            <div id="images">
+                <img class="cat" src="cat0.png" />
+                <img class="cat" src="cat1.png" />
+                <img class="cat" src="cat2.png" />
+                <img class="cat" src="cat3.png" />
+                <img class="cat" src="cat4.png" />
+                <img class="ninja" src="ninja0.png" />           
+                <img class="ninja" src="ninja1.png" />           
+                <img class="ninja" src="ninja2.png" />           
+                <img class="ninja" src="ninja3.png" />           
+                <img class="ninja" src="ninja4.png" />           
+            </div>
+             <button id="ninjaCat">Cat</button>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#ninjaCat').click(function () {
+                            $("img.ninja").css("display","none");
+                            $("img.cat").css("display","block");
+                        });
+                    });
+                </script>
+            <button id="catNinja">Ninja</button>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#catNinja').click(function () {
+                            $("img.cat").css("display","none");
+                            $("img.ninja").css("display","block");
+                        });
+                    });
+                </script>
+        </div>
+    </body>
+</html>

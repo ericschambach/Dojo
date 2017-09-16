@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jquery</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+
+    <div id="library">
+
+
+
+        <div id="cClick" class="content">
+            <h1>Click</h1>
+            <p>CLICK this stupid button</p>
+            <button id="click">click</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#click').click(function () {
+                        alert("You clicked it!");
+                    });
+
+                });
+            </script>
+        </div>
+
+        <div id="cHide" class="content">
+            <h1>Hide</h1>
+            <p>Click button to HIDE content</p>
+            <button id="hide">hide</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#hide').click(function () {
+                        $("#cHide p").hide("slow");
+
+                    });
+
+                });
+            </script>
+        </div>
+
+        <div id="cShow" class="content">
+            <h1>Show</h1>
+            <p>Click button to <span style="display:none">SHOW content</span></p>
+            <button id="show">Show</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $("#show").click(function () {
+                        $("span").show("slow");
+
+
+                    });
+
+                });
+            </script>
+        </div>
+
+        <div id="cToggle" class="content">
+            <h1>Toggle</h1>
+            <p>I am showing now</p>
+            <p style="display:none"><span>Now I am showing</span></p>
+            <button id="toggle">toggle</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#toggle').click(function () {
+                        $("#cToggle p").toggle();
+                    });
+
+                });
+            </script>
+        </div>
+
+        <div id="cSdown" class="content">
+            <h1>slideDown</h1>
+            <p style="display:none">Click to slide content down</p>
+            <button id="slideDown">slideDown</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#slideDown').click(function () {
+                        if ($("#cSdown p").is(":hidden")) {
+                            $("#cSdown p").slideDown("slow");
+                        } else {
+                            $("#cSdown p").hide();
+                        }
+
+                    });
+
+                });
+            </script>
+        </div>
+
+        <div id="cSup" class="content">
+            <h1>slideUp</h1>
+            <p>CLick button to slide content UP</p>
+            <button id="slideUp">SlideUp</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#cSup').click(function () {
+
+                        $("#cSup p").slideUp("slow");
+
+
+                    });
+
+                });
+            </script>
+        </div>
+
+        <div id="cStoggle" class="content">
+            <h1>slideToggle</h1>
+            <p>Click to toggle sliding of content</p>
+            <button id="slideToggle">slideToggle</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#slideToggle').click(function () {
+                        $("#cStoggle p").slideToggle("slow");
+
+                    });
+
+                });
+            </script>
+        </div>
+
+        <div id="cFin" class="content">
+            <h1>fadeIn</h1>
+            <p>Click to make content FADE IN</p>
+            <button id="fadeIn">fadeIn</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#fadeIn').click(function () {
+                        $("#cFin p").fadeIn(3000);
+
+                    });
+
+                });
+            </script>
+        </div>
+        <div id="cFout" class="content">
+            <h1>fadeOut</h1>
+            <p>Click to make content FADE OUT</p>
+            <button id="fadeOut">fadeOut</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#fadeOut').click(function () {
+                        $("#cFout p").fadeOut("slow");
+
+                    });
+
+                });
+            </script>
+        </div>
+
+        <div id="cAddClass" class="content">
+            <h1>addClass</h1>
+            <p class="yellow">This paragraph should be red after clicking the button. it would be yellow if the addClass function failed.</p>
+            <button id="addClass">addClass</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#addClass').click(function () {
+                        $(".yellow").addClass("red");
+
+                    });
+
+                });
+            </script>
+            
+        </div>
+        
+        <div id="cStoggle" class="content">
+            <h1>slideToggle</h1>
+            <p>Click to toggle sliding of content</p>
+            <button id="slideToggle">slideToggle</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#slideToggle').click(function () {
+                        $("#cStoggle p").slideToggle("slow");
+
+                    });
+
+                });
+            </script>
+        </div>
+        
+        <div id="cStoggle" class="content">
+            <h1>slideToggle</h1>
+            <p>Click to toggle sliding of content</p>
+            <button id="slideToggle">slideToggle</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#slideToggle').click(function () {
+                        $("#cStoggle p").slideToggle("slow");
+
+                    });
+
+                });
+            </script>
+        </div>
+        
+        <div id="cStoggle" class="content">
+            <h1>slideToggle</h1>
+            <p>Click to toggle sliding of content</p>
+            <button id="slideToggle">slideToggle</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#slideToggle').click(function () {
+                        $("#cStoggle p").slideToggle("slow");
+
+                    });
+
+                });
+            </script>
+        </div>
+        
+        <div id="cStoggle" class="content">
+            <h1>slideToggle</h1>
+            <p>Click to toggle sliding of content</p>
+            <button id="slideToggle">slideToggle</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#slideToggle').click(function () {
+                        $("#cStoggle p").slideToggle("slow");
+
+                    });
+
+                });
+            </script>
+        </div>
+        
+        <div id="cStoggle" class="content">
+            <h1>slideToggle</h1>
+            <p>Click to toggle sliding of content</p>
+            <button id="slideToggle">slideToggle</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#slideToggle').click(function () {
+                        $("#cStoggle p").slideToggle("slow");
+
+                    });
+
+                });
+            </script>
+        </div>
+        
+        <div id="cStoggle" class="content">
+            <h1>slideToggle</h1>
+            <p>Click to toggle sliding of content</p>
+            <button id="slideToggle">slideToggle</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#slideToggle').click(function () {
+                        $("#cStoggle p").slideToggle("slow");
+
+                    });
+
+                });
+            </script>
+        </div>
+        
+        <div id="cStoggle" class="content">
+            <h1>slideToggle</h1>
+            <p>Click to toggle sliding of content</p>
+            <button id="slideToggle">slideToggle</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#slideToggle').click(function () {
+                        $("#cStoggle p").slideToggle("slow");
+
+                    });
+
+                });
+            </script>
+        </div>
+        
+        <div id="cStoggle" class="content">
+            <h1>slideToggle</h1>
+            <p>Click to toggle sliding of content</p>
+            <button id="slideToggle">slideToggle</button>
+
+            <!-- THIS IS WHERE JQUERY GOES -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+
+                    $('#slideToggle').click(function () {
+                        $("#cStoggle p").slideToggle("slow");
+
+                    });
+
+                });
+            </script>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

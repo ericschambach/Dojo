@@ -1,0 +1,205 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper{
+    width: 970px;
+    height: 1000px;
+    background-color: lightgrey;
+    margin:auto;
+}
+#header{
+    width: 944px;
+    background-color: lightgray;
+    height: 7%;
+    padding-top: 10px;
+    padding-left: 26px;
+}
+#header h1{
+    font-size: 29pt;
+    display: inline-block;
+}
+#header h3{
+    margin-left:455px;
+    font-size: 15pt;
+    display: inline-block;
+}
+#mainView{
+    width: 930px;
+    background-color: #68576b;
+    height: 86%;
+    padding: 20px 20px;
+}
+#topView{
+    width:100%;
+    height: 38%;
+}
+#mainPhoto{
+    width: 440px;
+    height: 290px;
+    display: inline-block;
+    background-color: lightgray;
+    padding: 5px;
+}
+#photo{
+    width: 100%;
+    height: 100%;
+}
+#mainPhoto, #about{
+    vertical-align: top;
+}
+#about{
+    width: 450px;
+    height: 300px;
+    display: inline-block;
+    background-color: #e1d9e2;
+    margin-left: 25px;
+}
+#abouttitle{
+    width: 97.8%;
+    height: 12%;
+    background-color: darkgrey;
+    color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 13.5pt;
+}
+#aboutbody, #aboutbody a{
+    width: 100%;
+    height: 15%;
+    padding: 10px 5px 0px 10px;
+    color: black;
+    resize: horizontal;
+    max-width: 430px;
+    
+}
+#title h3{
+    color: white;
+}
+#bottomView {
+    width:100%;
+    height: 63%;
+}
+.block{
+    width:31.95%;
+    height:92.5%;
+    background-color: #e1d9e2;;
+    display: inline-block;
+    margin-right:15px;       
+}
+.block:last-child{
+    margin-right: 0;
+}
+.blocktitle {
+    height: 6.5%;
+    background-color: darkgrey;
+    padding: 7px 0px 0px 10px;
+    font-family: Arial, Verdana, sans-serif;
+}
+.blocktitle p{
+    height: 7.5%;
+    background-color: darkgrey;
+    color: white;
+    font-size: 13pt;
+    font-weight: bold;
+}
+.blockpicture{
+    height: 30%;
+    background-color: lightgrey;
+    padding:5px;
+}
+.newspicture{
+    height: 100%;
+    width: 100%;
+}
+.blocktext{
+    height: 23%;
+    background-color: #e1d9e2;
+    font-size: 8pt;
+    padding-left: 10px;
+    text-justify: auto;
+    resize: horizontal;
+    max-width: 400px;
+}
+.technologies {
+    height: 5%;
+    background-color: darkgrey;
+    padding: 10px 0px 0px 10px;
+    font-family: Arial, Verdana, sans-serif;
+}
+.technologies p{
+    height: 7.5%;
+    background-color: darkgrey;
+    color: white;
+    font-size: 11pt;
+    font-weight: bold;
+}
+.bottompart {
+    height: 35%;
+    background-color: #e1d9e2;
+}
+.toplogos {
+    height: 33.33%;
+    padding: 12px 0px 0px 5px;
+}
+.logobreak {
+    height: 76%;
+    width: 16%;
+    margin-right: 5px;
+    display: inline-block;
+}
+.bottomlogos{
+    height: 33.33%;
+    padding: 0px 0px 0px 5px;
+}
+.button{
+    height: 33.33%;
+    padding-top: 5px;
+}
+#greenbutton1,#greenbutton2,#greenbutton3{
+    height: 23px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #397539;
+    color: white;
+    text-align: center;
+    padding-top:2px;
+    border: solid .5px black;
+    box-shadow: 3px 3px 5px black;
+}
+#greenbutton1{
+    width: 80px;
+}
+#greenbutton2{
+    width: 130px;
+}
+#greenbutton3{
+    width: 90px;
+}
+#footer{
+    width: 100%;
+    height: 7%;
+    background-color: lightgray;
+    text-align: center;
+    font-size: 12pt;
+    padding: 10px 0px;
+    font-weight: bold;
+}
+#topFooter{
+    width: 100%;
+    height: 50%;
+    background-color: lightgray;
+}
+#bottomFooter{
+    width: 100%;
+    height: 50%;
+    background-color: lightgray;
+}
+#bottomFooter a{
+    color: black;
+}
+.mspics {
+    height: 15px;
+    width: 15px;
+}

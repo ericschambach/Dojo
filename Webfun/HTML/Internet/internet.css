@@ -1,0 +1,49 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper {
+    width: 970px;
+    height: 850px;
+    background-color: black;
+    margin:auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#header {
+    height:15%;
+    background-color: green;
+}
+#header img{
+    height:50px;
+    width: 50px;
+}
+#mainPage {
+    height:85%;
+    background-color: lightblue;
+}
+ #sidebar{
+    background-color:orange;
+    height: 100%;
+    width: 25%;
+    display: inline-block;
+}
+#internetVideos {
+
+}
+.redText {
+    color:red;
+}
+.lightBlue {
+    color: lightblue;
+}
+#ninjaCode {
+
+}
+ #mainBody{
+    background-color:red;
+    height: 100%;
+    width: 74%;
+    display: inline-block;
+    vertical-align: top;
+} 

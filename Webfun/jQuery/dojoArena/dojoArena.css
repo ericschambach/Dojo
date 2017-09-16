@@ -1,0 +1,98 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper{
+    width: 1600px;
+    height: 700px;
+    background-color: black;
+    margin:auto;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:15px;
+    padding-bottom:200px;
+}
+#wrapper img{        
+    height: 55%;
+    width: 20%;
+    margin-left: 250px; 
+    /* background-repeat: no-repeat;  */
+    border:none;
+    align-content: center;
+} 
+#wrapper img:last-of-type{
+    margin-left: 440px;
+}
+
+#turtle1 img{
+    /* display:none; */
+
+    background-repeat:no-repeat;  
+
+}
+#turtle2 img{
+    /* display:none; */ 
+    background-repeat:no-repeat;  
+
+}
+#selectArena{
+    width: 300px;
+    height: 165px;
+    /* opacity: .5; */
+    background-color: #bfbfbf;
+    margin-top:17%;
+    margin-left:40%;
+    text-align: center;
+    border-radius: 10px;
+    border: 4px solid darkgrey;
+    padding-bottom: 5px;
+}
+.buttonrow{
+    height:30%;
+}
+#selectArena h1{
+    text-align: center;
+    color: orange;
+    /* color: */
+    text-shadow: 2px 2px white;
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+}
+#selectArena button{
+    width: 30%;
+    height: 90%;
+    background-color: #ffffff;
+    opacity: 1;
+    text-align: center;
+    border-radius: 5px;
+}
+.images{
+    height:60%;
+}
+#selectPlayers{
+    display:none;
+    width: 300px;
+    height: 165px;
+    opacity: .6; 
+    background-color: #bfbfbf;
+    margin-top:17%;
+    margin-left:40%;
+    text-align: center;
+    border-radius: 10px;
+    border: 4px solid darkgrey;
+    padding-bottom: 5px;
+}
+#selectPlayers h1{
+    text-align: center;
+    color: orange;
+    /* color: */
+    text-shadow: 2px 2px white;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.pselect{
+
+    background-color: white;
+    border-radius: 5px;
+}

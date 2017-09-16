@@ -1,0 +1,178 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper {
+    width: 970px;
+    height: 850px;
+    background-color: #205f7d;
+    margin:auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#upperSection {
+    height: 60%;
+}
+#logoSearch {
+    height: 30%;
+}
+#logo {
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+}
+#logo img{
+    width: 100%;
+    height: 100%;
+}
+#search {
+    height: 94%;
+    display: inline-block;
+    margin-left: 86px;
+    vertical-align: top;
+    padding-top: 6px;
+    padding-left: 78px
+}
+#textsize{
+    margin-left: 128px;
+    margin-bottom: 4px;
+    font-size:9pt;
+    color:white;
+}
+#textsize a{
+    color:gold;
+}
+#searchbox {
+    height: 33px;
+    width: 250px;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    background-color: #484444;
+    box-shadow: 3px 3px 7px;       
+}
+#searchbox input{
+    height: 30px;
+    width: 147px;
+    text-align: center;
+    margin-left: 11px;
+}
+#searchbox button{
+    height: 30px;
+    width: 42px;
+    margin-left: 10px;
+    border-radius: 7px;
+    background-color: #206282;
+    color: white;
+}
+#taskbar {
+    height: 7%;
+    width: 90%;
+    background-color: #4187bf;
+    margin-left: 68px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    font-size: 14pt;
+    padding-top: 10px;
+    box-shadow: 5px 5px 5px black;
+}
+#taskbar a{
+    display: inline;
+    text-decoration: none;
+    color:white;
+    margin-left: 55px;
+}
+#upperMainBody {
+    height: 60%;
+}
+.bodytext{
+    color: white;
+    display: inline-block;
+    text-align: center;
+    margin-right:0;
+    list-style-position: inside;
+} 
+#bodytext1{
+    width: 18%;
+    font-size: 12pt;
+    vertical-align: 53px;
+    line-height: 1.5;
+    margin-left: 76px;
+}
+#bodytext1 a{
+    color: white;
+}
+#bodytext1 ul{
+     color: gold;
+} 
+#bodytext2 {
+    width: 64%;
+    resize: horizontal;
+    max-width: 591px;
+    margin-left: 69px
+}
+#bodytext2 ul{
+    list-style-type: none;
+    line-height: 1.5;
+    margin-top: 10px;
+}
+#bodytext2 p{
+    font-size:11pt;
+}
+.goldUl{
+    color: gold;
+}
+.blueUl{
+    color: #71aad8; 
+} 
+#middleSection {
+    height: 25%;
+    background-color: white;
+    margin: auto;    
+}
+.blocktext{
+    display:inline-block;
+    font-size:9pt;
+    resize: horizontal;
+    max-width: 300px;
+    margin-left: 100px;
+    text-align: center;
+    vertical-align: top;
+    margin-top: 20px;
+}
+.blocktext ul{
+    padding-left: 20px;
+}
+.blocktext li{
+    color:black; 
+}
+.blocktext h3{
+    margin-bottom: 5px;
+}
+.spacing {
+    line-height: 1.5;
+}
+.blocktext:last-child{
+    margin-left: 20;
+}
+#blocktext1, #blocktext2{
+    border-top: 3px solid #71aad8;
+}
+#lowerSection {
+    height: 15%;
+    text-align: center;
+    padding-top: 76px;
+}
+#lowerSection p{
+    color: #7199b9;
+    font-size: 12pt;
+    display: inline;
+    margin-right: 52px;
+}
+.copyright{
+    display: block;
+    color: #407198;
+    font-size: 7pt;
+    margin-top: 12px;
+}

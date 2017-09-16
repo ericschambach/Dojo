@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>jquery</title>
+        <link rel="stylesheet" type="text/css" href="ninja.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>jQuery - Assignment 1</h1>
+            <div class="images">
+                <img src="portfolio2.png" />
+                <img src="portfolio2.png" />
+                <img src="portfolio2.png" />
+                <img src="portfolio2.png" />
+            </div>
+            <div class="images">
+                <img src="portfolio2.png" />    
+                <img src="portfolio2.png" />
+                <img src="portfolio2.png" />
+                <img src="portfolio2.png" />           
+            </div>
+            <button class="restore">Restore</button>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('.restore').click(function () {
+                            $("img").fadeTo("fast",100);
+                        });
+                    });
+                </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,106 @@
+/*CSS reset settings here*/
+*{
+ margin: 0px;
+ padding: 0px;
+}
+#wrapper {
+    width: 970px;
+    background-color: darkblue;
+    margin: 0px auto;
+    padding: 10px;
+}
+#header{
+ height: 50px;
+ width: 100%;
+ background-color: crimson;
+ border-radius: 20px;
+ margin-bottom: 20px;
+ padding-top: 10px;
+}
+#header h1{
+ font-family: Arial, Helvetica, sans-serif; 
+ font-weight: 5px;
+ font-size: 34px;
+ margin-left: 30px;
+ color:lightgrey;
+}
+#navigation{
+    height: 231px;
+    width: 20%;
+    background-color: teal;
+    border-radius: 20px;
+    padding-top: 5px;
+    padding-left: 15px;
+    isplay: inline-blockd
+}
+#navigation a{
+ margin-top: 10px;
+ /* padding: 0px 0px 0px 10px; */
+ font-size: 8.5pt;
+ font-weight: bold;
+ color: turquoise;
+}
+#navigation ul{
+ color: turquoise;
+ font-weight: bold;
+ padding: 0px 10px 0px 30px;
+}
+#main_content{
+ height: 400px;
+ width: 70%;
+ background-color: black;
+ border-radius: 20px;
+ margin-left: 15px;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ padding-left: 10px;
+ display: inline-block;
+}
+#main_content h2{
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ font-weight: 3px;
+ font-size: 16pt;
+ color: lightgrey;
+ padding: 20px 30px 0px 30px;
+}
+#main_content ul, #main_content li{
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ font-weight: 3px;
+ font-size: 9pt;
+ color: lightgrey;
+ margin-top: 6px;
+ margin-left: 27px
+}
+#main_content p{
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ font-weight: 3px;
+ font-size: 9pt;
+ color: lightgrey;
+ padding: 10px 30px 0px 40px;
+} 
+#main_content a{
+ color: lightblue;
+}
+#navigation, #main_content{
+    vertical-align: top;
+}
+#footer{
+    height: 50px;
+    width: 100%;
+    background-color: purple;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+#footer p{
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ font-weight: 3px;
+ font-size: 9pt;
+ color: lightgrey;
+ padding: 20px 0px 0px 20px;
+}
+#footer a{
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ font-weight: 3px;
+ font-size: 9pt;
+ color: turquoise;
+ font-weight: bold;
+}

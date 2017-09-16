@@ -1,0 +1,52 @@
+*
+{
+background-color: white;
+text-align: center;
+padding-bottom: 10px;
+}
+
+.content
+{
+    border-bottom: 5px solid grey;
+
+}
+.content button{
+    height: 100%;
+}
+.content button, .content h1{
+    display: inline-block;
+    width: 40%;
+}
+
+.content button
+{
+    width: 200px;
+    height: 50px;
+    font-size: 24pt;
+    color: white;
+    background-color: red;
+    display: block;
+    margin: 0 auto;
+}
+
+#cToggle span
+{
+    color: blueviolet;
+}
+
+#cFin p
+{
+    background-color: red;
+    display: none;
+    color: white;
+}
+
+p.yellow.red
+{
+    color: red;
+}
+
+p.yellow
+{
+    color: yellow;
+}
