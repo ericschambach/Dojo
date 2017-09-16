@@ -80,19 +80,19 @@ def login(request):
         return redirect('/')
     else:
         password = md5.new(password).hexdigest()
-        try:
-            user = User()
-            username = user.select_one_user_by_email(email)
-        except:
-            messages.add_message(request, messages.ERROR,"*Username (e-mail) does not exist")
-            return redirect('/')
-        if username.password != password:
-            messages.add_message(request, messages.ERROR,"*Password does not match username")
+        user = User()
+        if user.select_one_user_by_email(email) is False:
+            messages.add_message(request, messages.ERROR, "*Username (e-mail) does not exist")
             return redirect('/')
         else:
-            request.session['first_name'] = username.first_name
-            request.session['email'] = username.email
-            return redirect('/books')
+            user.select_one_user_by_email(email)
+            if username.password != password:
+                messages.add_message(request, messages.ERROR,"*Password does not match username")
+                return redirect('/')
+            else:
+                request.session['first_name'] = username.first_name
+                request.session['email'] = username.email
+                return redirect('/books')
 
 def books(request):
     if 'first_name' not in request.session and 'email' not in request.session:
