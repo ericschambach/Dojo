@@ -1,0 +1,17 @@
+/*Write all of your CSS here*/
+
+/*CSS reset settings here*/
+.forms {
+    margin-top:30px;
+    display:inline-block;
+    vertical-align: top;
+}
+#registration {
+    margin-right: 150px;
+}
+#login {
+    margin-left: 150px;
+}
+.red {
+    color:red;
+}

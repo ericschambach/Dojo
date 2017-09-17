@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class='forms' id='registration'>
+    <h2>Enter your information:</h2>
+    <form action="/addUser" method="POST">
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" placeholder="At least 4 characters"><br><br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="lastName" placeholder="At least 4 characters"><br><br>
+        <label for="age">Age:</label>
+        <input type="text" name="age" placeholder="Only numbers"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" name="email"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="At least 8 characters"><br><br>
+        <label for="pw_confirm">Password Confirmation:</label>
+        <input type="password" name="pw_confirm"><br><br>
+        <input type="submit" value="Register"> 
+    </form><br><br>
+    @foreach(var error in ViewBag.Errors)
+    {
+        <p class="red">@error</p>
+    }
+</div>
+<div class='forms' id='login'>
+    <h2>Login:</h2>
+    <form action="/login" method="POST">
+        <label for="email">Username:</label>
+        <input type="email" name="email" placeholder="Your e-mail"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="At least 8 characters"><br><br>
+        <input type="submit" value="Login"> 
+    </form>
+    @foreach(var logerror in ViewBag.LogErrors)
+    {
+        <p class="red">@logerror</p>
+    }
+</div>

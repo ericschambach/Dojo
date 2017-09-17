@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace ajaxnotes
+namespace validatingform
 {
     public class Program
     {

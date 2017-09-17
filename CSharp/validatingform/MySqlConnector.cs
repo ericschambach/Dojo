@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
  
-namespace ajaxnotes.Connectors
+namespace validatingform.Connectors
 {
     public class MySqlConnector
     {
         static string server = "localhost";
-        static string db = "ajaxinputdb"; //Change to your schema name
+        static string db = "validationformdb"; //Change to your schema name
         static string port = "3306"; //Potentially 8889
         static string user = "root";
         static string pass = "root";
