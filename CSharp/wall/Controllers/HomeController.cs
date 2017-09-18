@@ -242,7 +242,7 @@ namespace wall.Controllers
             MySqlConnector.Execute(delMessage);
             return RedirectToAction("Main");
         }
-        [HttpPost]
+        [HttpGet]
         [Route("/logout")]
         public IActionResult Logout()
         {
