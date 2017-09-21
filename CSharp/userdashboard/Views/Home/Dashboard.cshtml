@@ -1,0 +1,34 @@
+@model userdashboard.Models.Wrapper
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<table dir="ltr" width="500" border="1">
+    <colgroup width="50%" />
+    <colgroup id="colgroup" class="colgroup" align="center" 
+    valign="middle" title="title" width="1*" 
+    span="2" style="background:#ddd;" />
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Created_at</th>
+            <th scope="col">User Level</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach (var person in Model.Users)
+            {
+            <tr>
+                <td>@person.id</td>
+                <td><a href='@person.id'>@person.firstName @person.lastName</a></td>
+                <td>@person.email</td>
+                <td>@person.created_at.ToString("MMM d, yyyy")</td>
+                <td>@person.user_level</td>
+                <td>Actions</td>
+            </tr>
+            }
+    </tbody>
+</table><br><br>

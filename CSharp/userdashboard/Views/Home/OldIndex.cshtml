@@ -1,0 +1,98 @@
+@model codeFirst.Models.Wrapper
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Watch this...</h1>
+<p><a href="/makeMtoNThings">Make some many to many things...</a></p>
+<p><a href="/make1toMThings">Make some one to many things...</a></p>
+
+<div>
+    @if(Model != null)
+    {
+        <ul>
+        @foreach (var team in Model.Teams)
+        {
+            <li>@team.Name</li>
+            <ol>
+            @foreach (var player in team.Players)
+            {
+                <li>@player.Name <a href="/delPlayer/@player.PlayerId">Del</a></li>
+            }
+            </ol>
+        }
+        </ul>
+    }
+</div>
+<div>
+    <h3>Add a Team</h3>
+    <form action="/addTeam" method="POST">
+        Name: <input type="text" name="Name"><br>
+        City: <input type="text" name="City">
+        <input type="submit">
+    </form>
+</div>
+<div>
+    <h3>Add a Player</h3>
+    <form action="/addPlayer" method="POST">
+        Name: <input type="text" name="Name"><br>
+        Team: 
+
+        <select name="TeamId" id="teamSelect">
+            
+            @foreach (var team in Model.Teams)
+            {
+                <option value="@team.TeamId">@team.City @team.Name</option>
+            }
+            
+        </select>
+        <input type="submit">
+    </form>
+</div>
+
+<hr>
+<div></div>
+<div>
+<h3>Users</h3>
+@foreach ( var user in Model.Users )
+{
+    <p>@user.Name @user.Address @user.City @user.Zip</p>
+}
+
+<h3>Groups & Users</h3>
+<ul>
+    @foreach ( var group in Model.Groups )
+    {
+        <li>@group.Name.</li>
+        @if(group.Members != null)
+        {
+            <ol>
+            @foreach (var member in group.Members)
+            {
+                <li>@member.User.Name</li>
+            }
+            </ol>
+        }
+    }
+</ul>
+</div>
+
+<style>
+    div{
+        display:inline-block;
+        padding-left: 20px;
+    }
+</style>
+
+@section Scripts {
+<script>
+    $(document).ready(function() {
+        $("#teamSelect").change(function(){
+            console.log(this);
+        });
+    });
+</script>
+}
+
+
+

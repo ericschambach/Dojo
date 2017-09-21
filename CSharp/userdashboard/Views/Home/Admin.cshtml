@@ -1,0 +1,46 @@
+@model userdashboard.Models.registerViewModel
+
+@{
+    ViewData["Title"] = "New User";
+}
+<h2>Add a new User                                  <button href='dashboard'>Return to Dashboard</button> <a href='logout'>Log Out</a></h2>
+
+<form action="" method="POST">
+<!-- ======================================================================================== -->
+<!-- ======================================================================================== -->
+    <label for="firstName">First Name:</label>
+    <input asp-for="firstName" type="text" name="firstName">
+    <span asp-validation-for="firstName"></span>
+<!-- ======================================================================================== -->
+<!-- ======================================================================================== -->
+
+    <label for="lastName">Last Name:</label>
+    <input asp-for="lastName" type="text" name="lastName">
+    <span asp-validation-for="lastName"></span>
+<!-- ======================================================================================== -->
+<!-- ======================================================================================== -->
+
+    <label for="email">Email:</label>
+    <input asp-for="email" type="email" name="email">
+    <span asp-validation-for="email"></span>
+<!-- ======================================================================================== -->
+<!-- ======================================================================================== -->
+
+    <label for="password">Password:</label>
+    <input asp-for="password" type="password" name="password">
+    <span asp-validation-for="password"></span>
+<!-- ======================================================================================== -->
+<!-- ======================================================================================== -->
+
+    <label for="confirmPassword">Confirm Password:</label>
+    <input asp-for="confirmPassword" type="password" name="confirmPassword"><br>
+    <span asp-validation-for="confirmPassword"></span>
+<!-- ======================================================================================== -->
+<!-- ======================================================================================== -->
+
+    <input type="submit" name="Create">
+    
+<!-- ======================================================================================== -->
+<!-- ======================================================================================== -->
+    
+</form>
