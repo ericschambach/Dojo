@@ -94,7 +94,15 @@ namespace userdashboard.Controllers
                 if (hasher.VerifyHashedPassword(loginuser, loginuser.password, Password) != 0)
                 {
                     HttpContext.Session.SetInt32("currentUserId", loginuser.id);
-                    return RedirectToAction("Main");
+                    if(loginuser.user_level == "admin")
+                    {
+                        return RedirectToAction("dashboard/admin");
+                    }
+                    else
+                    {
+                        return RedirectToAction("dashboard");
+                    }
+                    
                 }
                 else
                 {
@@ -115,7 +123,10 @@ namespace userdashboard.Controllers
                 // TempData["LogErrors"] = ViewBag.LogErrors;
                 return RedirectToAction("Login");
             }
-            return View("Main");
+            else
+            {
+                return View("Main");
+            }      
         }
         [HttpGet]
         [Route("new")]
@@ -155,6 +166,7 @@ namespace userdashboard.Controllers
         public IActionResult Dashboard()
         {
             string email = HttpContext.Session.GetString("currentUserId");
+            List<User> users = _context.Users.ToList();
             if(email == null)
             {
                 // ViewBag.LogErrors.Add("You need to log in first");
@@ -162,15 +174,19 @@ namespace userdashboard.Controllers
                 HttpContext.Session.Clear();
                 return RedirectToAction("Login");
             }
+            else if(users == null)
+            {
+                HttpContext.Session.Clear();
+                return RedirectToAction("Register");               
+            }
             else
             {
-
-                List<User> users = _context.Users.ToList();
                 // Wrapper model = new Wrapper(players, teams, users, groups, memberships);
                 Wrapper model = new Wrapper(users);                
                 return View(model);
             }
         }
+        
         [HttpGet]
         [Route("/logout")]
         public IActionResult Logout()
@@ -190,18 +206,24 @@ namespace userdashboard.Controllers
             }
         }
         [HttpGet]
-        [Route("/deleteMessage")]
-        public IActionResult deleteMessage(int? messageid)
+        [Route("delete/{userid}")]
+        public IActionResult deleteMessage(int userid)
         {
-            // string email = HttpContext.Session.GetString("userpass");
-            // string selectQuery = $"SELECT * FROM users WHERE email = '{email}'";
-            // var younow = MySqlConnector.Query(selectQuery);
-            // int? yourid = (int)younow[0]["id"];
-            // string delComments = $"DELETE FROM comments WHERE message_id = {messageid}";
-            // string delMessage = $"DELETE FROM messages WHERE id = {messageid}";
-            // MySqlConnector.Execute(delComments);
-            // MySqlConnector.Execute(delMessage);
-            return RedirectToAction("Main");
+            string email = HttpContext.Session.GetString("currentUserId");
+            if(email == null)
+            {
+                // ViewBag.LogErrors.Add("You need to log in first");
+                // TempData["LogErrors"] = ViewBag.LogErrors;
+                HttpContext.Session.Clear();
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                User RetrievedUser = _context.Users.SingleOrDefault(user => user.id == userid);
+                _context.Users.Remove(RetrievedUser);
+                _context.SaveChanges();
+                return RedirectToAction("Dashboard");
+            }
         }
         // [HttpPost]
         // [Route("")]
