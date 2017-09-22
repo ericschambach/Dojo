@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace codeFirst
+namespace userdashboard
 {
     public class Program
     {

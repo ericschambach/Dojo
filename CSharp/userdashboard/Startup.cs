@@ -8,7 +8,7 @@ using userdashboard.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
 
-namespace codeFirst
+namespace userdashboard
 {
     public class Startup
     {
