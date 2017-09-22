@@ -8,16 +8,18 @@ namespace userdashboard.Models
         // public List<Player> Players {get; set;}
         // public List<Team> Teams {get; set;}
         public List<User> Users {get; set;}
+        public List<Message> Messages {get; set;}
         // public List<Group> Groups {get; set;}
         // public List<Membership> Memberships {get; set;}
         // public Player newPlayer { get; set; }
 
         // public Wrapper(List<Player> p, List<Team> t, List<User> u, List<Group> g, List<Membership> m)
-        public Wrapper(List<User> u)
+        public Wrapper(List<User> u,List<Message> m)
         {
             // Players = p;
             // Teams = t;
             Users = u;
+            Messages = m;
             // Groups = g;
             // Memberships = m;
             // newPlayer = new Player();

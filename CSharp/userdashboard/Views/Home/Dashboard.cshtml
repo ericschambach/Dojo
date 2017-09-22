@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "Dashboard";
 }
+<a href='logout'>Log Out</a>
 <table dir="ltr" width="500" border="1">
     <colgroup width="50%" />
     <colgroup id="colgroup" class="colgroup" align="center" 
@@ -15,19 +16,25 @@
             <th scope="col">Email</th>
             <th scope="col">Created_at</th>
             <th scope="col">User Level</th>
-            <th scope="col">Actions</th>
+            @if(@ViewBag.loggeduser_level == "admin")
+            {
+                <th scope="col">Actions</th>
+            }   
         </tr>
     </thead>
     <tbody>
             @foreach (var person in Model.Users)
             {
             <tr>
-                <td>@person.id</td>
-                <td><a href='@person.id'>@person.firstName @person.lastName</a></td>
+                <td>@person.UserId</td>
+                <td><a href='@person.UserId'>@person.firstName @person.lastName</a></td>
                 <td>@person.email</td>
                 <td>@person.created_at.ToString("MMM d, yyyy")</td>
                 <td>@person.user_level</td>
-                <td><a href='delete/@person.id'>Delete</a><a href='update/@person.id'>Update</a></td>
+                @if(@ViewBag.loggeduser_level == "admin")
+                {
+                    <td><a href='delete/@person.UserId'>Delete</a><a href='update/@person.UserId'>Update</a></td>
+                }   
             </tr>
             }
     </tbody>

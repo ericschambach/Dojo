@@ -5,7 +5,7 @@ namespace userdashboard.Models
     public class User : BaseEntity
     {
 
-        public int id { get; set; }
+        public int UserId { get; set; }
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string email { get; set; }

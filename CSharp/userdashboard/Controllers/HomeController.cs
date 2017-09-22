@@ -40,11 +40,11 @@ namespace userdashboard.Controllers
             string newuser_level = "";
             if (ModelState.IsValid)
             {
-                if(users == null)
+                if(users.Count == 0)
                 {
                     newuser_level = "admin";
                 }
-                if(users != null)
+                if(users.Count > 0)
                 {
                     newuser_level = "normal";
                 }
@@ -61,8 +61,17 @@ namespace userdashboard.Controllers
                 newUser.password = hasher.HashPassword(newUser, model.password);
                 _context.Add(newUser);
                 _context.SaveChanges();
-                HttpContext.Session.SetInt32("currentUserId", newUser.id);
-                return RedirectToAction("Main");
+                HttpContext.Session.SetInt32("currentUserId", newUser.UserId);
+                if(newUser.user_level == "admin")
+                {
+                    
+                    // string address = "admin";
+                    return RedirectToAction("Dashboardadmin");
+                }
+                else
+                {
+                    return RedirectToAction("Dashboard");
+                }
             }
             else
             {
@@ -93,14 +102,16 @@ namespace userdashboard.Controllers
                 PasswordHasher<User> hasher = new PasswordHasher<User>();
                 if (hasher.VerifyHashedPassword(loginuser, loginuser.password, Password) != 0)
                 {
-                    HttpContext.Session.SetInt32("currentUserId", loginuser.id);
+                    HttpContext.Session.SetInt32("currentUserId", loginuser.UserId);
                     if(loginuser.user_level == "admin")
                     {
-                        return RedirectToAction("dashboard/admin");
+                        
+                        // string address = "admin";
+                        return RedirectToAction("Dashboardadmin");
                     }
                     else
                     {
-                        return RedirectToAction("dashboard");
+                        return RedirectToAction("Dashboard");
                     }
                     
                 }
@@ -111,22 +122,6 @@ namespace userdashboard.Controllers
                     return View("Login");
                 }
             }
-        }
-        [HttpGet]
-        [Route("main")]
-        public IActionResult Main()
-        {
-            string email = HttpContext.Session.GetString("currentUserId");
-            if(email == null)
-            {
-                // ViewBag.LogErrors.Add("You need to log in first");
-                // TempData["LogErrors"] = ViewBag.LogErrors;
-                return RedirectToAction("Login");
-            }
-            else
-            {
-                return View("Main");
-            }      
         }
         [HttpGet]
         [Route("new")]
@@ -163,11 +158,12 @@ namespace userdashboard.Controllers
         }
         [HttpGet]
         [Route("dashboard")]
-        public IActionResult Dashboard()
+        public IActionResult Dashboard(string userlevel)
         {
-            string email = HttpContext.Session.GetString("currentUserId");
+            int? id = HttpContext.Session.GetInt32("currentUserId");
             List<User> users = _context.Users.ToList();
-            if(email == null)
+            List<Message> messages = _context.Messages.ToList();
+            if(id == null)
             {
                 // ViewBag.LogErrors.Add("You need to log in first");
                 // TempData["LogErrors"] = ViewBag.LogErrors;
@@ -182,8 +178,45 @@ namespace userdashboard.Controllers
             else
             {
                 // Wrapper model = new Wrapper(players, teams, users, groups, memberships);
-                Wrapper model = new Wrapper(users);                
-                return View(model);
+                Wrapper model = new Wrapper(users, messages);                
+                return View("Dashboard",model);
+            }
+        }
+        [HttpGet]
+        [Route("dashboard/admin")]
+        public IActionResult Dashboardadmin(string userlevel)
+        {
+            int? id = HttpContext.Session.GetInt32("currentUserId");
+            List<Message> messages = _context.Messages.ToList();            
+            User loggeduser = _context.Users.SingleOrDefault(user => user.UserId == id);
+            List<User> users = _context.Users.ToList();
+            if(id == null)
+            {
+                // ViewBag.LogErrors.Add("You need to log in first");
+                // TempData["LogErrors"] = ViewBag.LogErrors;
+                HttpContext.Session.Clear();
+                return RedirectToAction("Login");
+            }
+            else if(users == null)
+            {
+                HttpContext.Session.Clear();
+                return RedirectToAction("Register");               
+            }
+            else
+            {
+                if(loggeduser.user_level != "admin")
+                {
+                    // ViewBag.LogErrors.Add("You need to log in first");
+                    // TempData["LogErrors"] = ViewBag.LogErrors;
+                    return RedirectToAction("Dashboard"); 
+                }
+                else
+                {
+                    ViewBag.loggeduser_level = loggeduser.user_level;
+                    // Wrapper model = new Wrapper(players, teams, users, groups, memberships);
+                    Wrapper model = new Wrapper(users,messages);                
+                    return View("Dashboard",model);
+                }
             }
         }
         
@@ -191,8 +224,8 @@ namespace userdashboard.Controllers
         [Route("/logout")]
         public IActionResult Logout()
         {
-            string email = HttpContext.Session.GetString("currentUserId");
-            if(email == null)
+            int? id = HttpContext.Session.GetInt32("currentUserId");
+            if(id == null)
             {
                 // ViewBag.LogErrors.Add("You need to log in first");
                 // TempData["LogErrors"] = ViewBag.LogErrors;
@@ -206,11 +239,11 @@ namespace userdashboard.Controllers
             }
         }
         [HttpGet]
-        [Route("delete/{userid}")]
+        [Route("delete{userid}")]
         public IActionResult deleteMessage(int userid)
         {
-            string email = HttpContext.Session.GetString("currentUserId");
-            if(email == null)
+            int? id = HttpContext.Session.GetInt32("currentUserId");
+            if(id == null)
             {
                 // ViewBag.LogErrors.Add("You need to log in first");
                 // TempData["LogErrors"] = ViewBag.LogErrors;
@@ -219,7 +252,7 @@ namespace userdashboard.Controllers
             }
             else
             {
-                User RetrievedUser = _context.Users.SingleOrDefault(user => user.id == userid);
+                User RetrievedUser = _context.Users.SingleOrDefault(user => user.UserId == userid);
                 _context.Users.Remove(RetrievedUser);
                 _context.SaveChanges();
                 return RedirectToAction("Dashboard");

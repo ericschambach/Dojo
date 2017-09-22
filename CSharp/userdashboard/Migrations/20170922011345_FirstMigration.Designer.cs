@@ -8,9 +8,10 @@ using userdashboard.Models;
 namespace userdashboard.Migrations
 {
     [DbContext(typeof(userdashboardContext))]
-    partial class userdashboardContextModelSnapshot : ModelSnapshot
+    [Migration("20170922011345_FirstMigration")]
+    partial class FirstMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
