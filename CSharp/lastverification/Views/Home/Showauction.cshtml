@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "Auction Items";
+}
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <h2>New Auction</h2><a href='/logout'>Log Out</a><a href='/home'>Home</a>
+        <h2>@ViewBag.Auction.ProductName</h2><h3>Created By: @ViewBag.Auction.CreatedUser</h3>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <h5>@ViewBag.Auction.Description</h5>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <h5>Current Highest Bid: @ViewBag.Auction.Bid</h5>
+         @if(@ViewBag.Auction.HighestBidder != null)
+                { 
+                    <h5>by @ViewBag.Auction.HighestBidder</h5>
+                }
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+<div class="row">
+    <div class="col-sm-1"></div>
+    @if(ViewBag.User.FirstName + " " + ViewBag.User.LastName != ViewBag.Auction.CreatedUser)
+    {
+
+        <div class="col-sm-10">
+            <form asp-controller="Home" asp-action="MakeBid" asp-route-id="@ViewBag.Auction.AuctionId" method="POST">
+                        <div class="form-group">
+                            <label for="bid">Make Bid</label>
+                            <input name="bid" type="number" aria-describedby="nameHelp" class="form-control" id="bid" placeholder="Your bid goes here...">
+                            @if(ViewBag.AmountErrors != null)
+                            {
+                                    @foreach(var error in ViewBag.AmountErrors)
+                                    {
+                                        <small id="nameHelp" class="form-text text-muted">@error</small>
+                                    }
+
+                            }
+                            
+                        </div>
+                        <button type="submit" class="btn btn-primary">Bid!!!</button>
+                    </form>
+        </div>
+    }
+    else
+    {
+        <p>You can only place a bid on other peoples items</p>
+    }
+    <div class="col-sm-1"></div>
+</div>

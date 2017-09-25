@@ -1,0 +1,73 @@
+@{
+    ViewData["Title"] = "Auction";
+}
+@model beltexam.Models.UserModelView
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div id="login">
+            <h2>Login:</h2>
+            <form asp-controller="Home" asp-action="Login" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input name="username" type="text" aria-describedby="nameHelp" class="form-control" id="username" placeholder="Your username">
+                        @{
+                            if(TempData["UsernameError"] != null)
+                            {
+                                <small id="nameHelp" class="error-message form-text text-muted">@TempData["UsernameError"]</small>
+                            }
+                        }
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" aria-describedby="passwordHelp" type="password" class="form-control" placeholder="Your password">
+                            @if(TempData["PasswordError"] != null)
+                            {
+                                <small id="passwordHelp" class="error-message form-text text-muted">@TempData["PasswordError"]</small>
+                            }
+                    <br><button type="submit" class="btn btn-primary">Login</button>
+                    @if(TempData["LogErrors"] != null)
+                    {
+                        <small id="logHelp" class="error-message form-text text-muted">@TempData["LogErrors"]</small>
+                    }
+                </div>
+            </form>
+        </div>
+        <div id="register">
+            <h2>Register:</h2>
+            <form asp-controller="Home" asp-action="Index" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input asp-for="Username" id="username" name="Username" type="text" aria-describedby="nameHelp" class="form-control" placeholder="Between 3 and 20 characters">
+                    <small id="nameHelp" class="form-text text-muted"><span asp-validation-for="Username"></span></small>
+                    @if(ViewBag.RegDup != null)
+                    {
+                        <small id="passwordHelp" class="error-message form-text text-muted">@ViewBag.RegDup</small>
+                    }
+                </div>
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input asp-for="FirstName" id="firstname" type="text" name="FirstName" aria-describedby="firstnameHelp" class="form-control" placeholder="At least 3 characters">
+                    <small id="userHelp" class="form-text text-muted"><span asp-validation-for="FirstName"></span></small>
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input asp-for="LastName" id="lastname" type="text" name="LastName" aria-describedby="lastnamedHelp" class="form-control" placeholder="At least 3 characters">
+                    <small id="PasswordHelp" class="form-text text-muted"><span asp-validation-for="LastName"></span></small>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input asp-for="Password" id="password" type="password" name="Password" aria-describedby="passwordHelp" class="form-control">
+                    <small id="passwordHelp" class="form-text text-muted"><span asp-validation-for="Password"></span></small>
+                </div>
+                <div class="form-group">
+                    <label for="Confirm">Confirm Password</label>
+                    <input asp-for="Confirm" name="Confirm" aria-describedby="ConfirmHelp" class="form-control" id="Confirm" type="password">
+                    <small id="ConfirmHelp" class="form-text text-muted"><span asp-validation-for="Confirm"></span></small>
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>

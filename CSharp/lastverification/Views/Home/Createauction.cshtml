@@ -1,0 +1,48 @@
+@model beltexam.Models.AuctionViewModel
+@{
+    ViewData["Title"] = "New Auction Item";
+}
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>New Auction</h2><a href='logout'>Log Out</a><a href='home'>Home</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <form asp-controller="Home" asp-action="CreateAuction" method="POST">
+                    <div class="form-group">
+                        <label for="productname">Product Name:</label>
+                        <input asp-for="ProductName" name="productname" type="text" aria-describedby="nameHelp" class="form-control" id="productname"
+                            placeholder="Your product name">
+                        <small id="nameHelp" class="form-text text-muted"><span asp-validation-for="ProductName"></span></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea row="3" asp-for="Description" name="description" aria-describedby="userHelp" type="text" class="form-control" id="description"
+                            placeholder="Include a descriptions of your product here"></textarea>
+                        <small id="userHelp" class="form-text text-muted"><span asp-validation-for="Description"></span></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="minimumbid">Starting Bid:</label>
+                        <input asp-for="MinimumBid" name="minimumbid" aria-describedby="bidHelp" class="form-control" id="minimumbid" type="number" placeholder="Choose a value">
+                        <small id="minimumbidHelp" class="form-text text-muted"><span asp-validation-for="MinimumBid"></span></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="Enddate">End Date:</label>
+                        <input asp-for="EndDate" name="EndDate" aria-describedby="dateHelp" class="form-control" id="date" type="date">
+                        <small id="dateHelp" class="form-text text-muted"><span asp-validation-for="EndDate"></span></small>
+                            @if(TempData["InvalidTime"] != null)
+                            {
+                                <small id="passwordHelp" class="error-message form-text text-muted">@TempData["InvalidTime"]</small>
+                            }
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Auction</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>

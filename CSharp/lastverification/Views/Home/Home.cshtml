@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Home";
+}
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Hi @ViewBag.User.FirstName</h2>
+                <a href="logout">Log Out</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Current Auction</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Seller</th>
+                            <th>Top Bid</th>
+                            <th>Time Remaining</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var auction in ViewBag.Auctions)
+                        {
+                        <tr>
+                            <td><a asp-controller="Home" asp-action="ShowAuction" asp-route-id="@auction.AuctionId">@auction.ProductName</a></td>
+                            <td>@auction.CreatedUser</td>
+                            <td>@auction.Bid</td>
+                            <td>@ViewBag.Reamining[@auction.AuctionId] days remaining</td>
+                            @if(@auction.CreatedUser == @ViewBag.User.FirstName + " " + @ViewBag.User.LastName)
+                            {
+                                <td><a asp-controller="Home" asp-action="DeleteAuction" asp-route-id="@auction.AuctionId">Delete</a></td>
+                            }
+                        </tr>
+                        }
+                </table>
+                <h4>Your current Wallet: $@ViewBag.User.Wallet</h4><br>
+                <a href="CreateAuction"><button type="button" >New Auction</button></a>                
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
