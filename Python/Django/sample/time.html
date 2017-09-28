@@ -1,0 +1,47 @@
+{% for i in appoint %}
+{% if i.appointment != 'Not' %}
+    <tr>
+        <td>{{i.task}}</td>
+        <td>{{i.appointment}}</td>
+        <td>{{i.status}}</td>
+        <td>
+            {% if i.appointment.time > time_now %}
+            <form action="/appointments/{{i.id}}" method='POST'>
+                {% csrf_token %}
+                <input type="submit" value='Update'>
+            </form> 
+            <form action="/delete_appointment" method='POST'>
+                {% csrf_token %}
+                <input type="hidden" name='app_id' value='{{i.id}}'>
+                <input type="submit" value='Delete'>
+            </form>  
+            {% endif %}      
+        </td>
+    </tr>
+{% endif %}
+{% endfor %}
+</tbody>
+</table><br><br>
+<h3>Your other appointments:</h3><br><br>
+<table dir="ltr" width="500" border="1">
+<colgroup width="50%" />
+<colgroup id="colgroup" class="colgroup" align="center" 
+valign="middle" title="title" width="1*" 
+span="2" style="background:#ddd;" />
+<thead>
+    <tr>
+        <th scope="col">Tasks</th>
+        <th scope="col">Date</th>
+        <th scope="col">Time</th>
+    </tr>
+</thead>
+<tbody>
+{% for i in later %}
+{% if i.appointment != 'Not' %}
+    <tr>
+        <td>{{i.task}}</td>
+        <td>{{i.appointment.date}}</td>
+        <td>{{i.appointment.time}}</td>
+    </tr>
+{% endif %}
+{% endfor %}
