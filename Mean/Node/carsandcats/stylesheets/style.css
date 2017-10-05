@@ -1,0 +1,23 @@
+
+*{
+    width: 970px;
+}
+
+.choice {
+    background-color: yellow;
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    font-size: 24pt;
+    padding: 2px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+#cats{
+    color: white;
+}
+
+#cars{
+    color: lightblue;
+}
