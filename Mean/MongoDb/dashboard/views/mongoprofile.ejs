@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>Mongoose Profile</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <a href="/mongooses/edit/<%= mongoose._id%>">Edit</a><a href="/">Home</a>
+            <h2>Mongoose Profile</h2><br>
+            <h4>Name: <%= mongoose.name%></h4><br>
+            <h4>Age: <%= mongoose.age%></h4><br>            
+        </div>
+    </body>
+</html>

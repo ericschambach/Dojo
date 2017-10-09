@@ -8,8 +8,11 @@
     </head>
     <body>
         <div id="wrapper">
+            <h5><a href='/mongoose/new'>Add mongoose</a></h5>
             <h1>Look through all of our Mongooses</h1><br>
-                <% for(mongoose in mongooses){ %>
+            <hr>
+                <% for(i in mongoose){ %>
+                    <p>- Name: <a href='/mongooses/<%= mongoose[i]._id  %>'><%= mongoose[i].name  %></a>, Age: <%= mongoose[i].age  %> <form action='/mongooses/destroy/<%= mongoose[i]._id  %>' method='POST'><input type='submit' value='Delete me'/></form></p><br>
                 <% } %>
         </div>
     </body>
