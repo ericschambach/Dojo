@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>QuotingDojo</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Here are some awesome quotes!</h1><br><br><br>
+            <% for(quote in quotes){ %>
+                <p>"<%= quotes[quote].quote %>"</p>
+                <p>- <%= quotes[quote].name %> at <%= quotes[quote].createdAt %></p>
+                <hr>
+            <% } %>
+        </div>
+    </body>
+</html>
