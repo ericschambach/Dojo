@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title>A Web Page</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>The Dojo Message Board</h1>
+            <hr>
+            <form action="/addmessage" method='POST'>
+                <label for="name">Name:</label>
+                <input type="text" name='name'/><br>
+                <label for="text">Message:</label>
+                <textarea name="text" cols="30" rows="10"></textarea><br><br>
+                <input type='submit' value='Post Message'/>
+            </form>
+            <% for(message in messages){ %>
+                <h3>Name: <%= messages[message].name %></h3>
+                <h3>Message: <%= messages[message].text %></h3>   
+                <% for(var i = 0; i < messages[message].comments.length; i++){ %>
+                    <p>Name: <%= messages[message].comments[i].name %></p>
+                    <p>Comment: <%= messages[message].comments[i].text %></p>
+                <% } %>       
+                <form action="/addcomment/<%= messages[message]._id %>" method='POST'>
+                    <label for="name">Name:</label>
+                    <input type="text" name='name'/><br>
+                    <label for="text">Comment:</label>
+                    <textarea name="text" cols="30" rows="10"></textarea><br><br>
+                    <input type='submit' value='Post comment'/>
+                </form>
+            <% } %>
+        </div>
+    </body>
+</html>
