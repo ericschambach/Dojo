@@ -1,0 +1,83 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>Registration</h1>
+  <form #userForm="ngForm" (submit)="onSubmit()">
+    <label for="firstName">*First Name:</label>
+    <input
+    type="text"
+    name="firstName"
+    required 
+    minlength="4" 
+    maxlength="24"
+    [(ngModel)]="user.firstName"
+    #firstName="ngModel"/><br>
+    {{ firstName.errors | json }}
+    {{ firstName.valid | json }}
+    <p *ngIf='firstName.errors' >First Name field not correct</p>
+    <label for="lastName">*Last Name:</label>
+    <input
+    type="text"
+    name="lastName"
+    required 
+    minlength="4" 
+    maxlength="24"
+    [(ngModel)]="user.lastName"
+    #lastName="ngModel"/><br>
+    {{ lastName.errors | json }}
+    {{ lastName.valid | json }}  
+    <label for="email">*Email:</label>
+    <input
+    type="email"
+    name="email"
+    required 
+    minlength="4" 
+    maxlength="24"
+    [(ngModel)]="user.email"
+    #email="ngModel"/><br>
+    {{ email.errors | json }}
+    {{ email.valid | json }}  
+    <label for="password">*Password:</label>
+    <input
+    type="password"
+    name="password"
+    required 
+    minlength="4" 
+    maxlength="24"
+    [(ngModel)]="user.password"
+    #password="ngModel"/><br>
+    {{ password.errors | json }}
+    {{ password.valid | json }}  
+    <label for="passwConfirm">*Password Confirmation:</label>
+    <input
+    type="password"
+    name="passwConfirm"
+    required 
+    minlength="4" 
+    maxlength="24"
+    [(ngModel)]="user.passwConfirm"
+    #passwConfirm="ngModel"/><br>
+    <label for="street">*Street Address:</label>
+    <input type="text" name="street"
+    required 
+    minlength="4" 
+    maxlength="24"
+    [(ngModel)]="user.street"
+    #street="ngModel"/><br>
+    <label for="unit">Unit/Apt #</label>
+    <input type="text" name="unit"/><br>
+    <label for="city">*City:</label>
+    <input type="text" name="city"
+    required 
+    minlength="4" 
+    maxlength="24"
+    [(ngModel)]="user.city"
+    #city="ngModel"/><br>
+    <label for="lucky">*I am feeling lucky:</label>
+    <input type="radio" name="lucky" value="Yes" checked>Yes
+    <input type="radio" name="lucky" value="No" checked>No<br>
+    <input type='submit' value='Register' [hidden]="!userForm.valid">
+  </form>
+  {{users | json}}
+  {{user | json}}
+</div>
+

@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  {{number}}
+  {{name}}
+  {{user.firstName}}
+  {{user.lastName}}
+
+  {{ number }}
+  {{ 5 + 5 }}
+  {{ number + 5 }}
+  {{ user | json }}
+  {{ user.firstName | uppercase }} // result -> 'DARTH'
+  {{ amount | currency }} // result -> USD1.20
+  {{ amount | currency:'AUS' }} // result -> AUS1.20 (:'VAL' represents the type of currency)
+  {{ amount | currency:'USD':true }} // result -> $1.20 (true/false determines the replacement of currency title to symbol)<br>
+
+  {{ today | date:'fullDate' }} -> Tuesday, May 16, 2017 
+  {{ today | date:'longDate' }} -> May 16, 2017 
+  {{ today | date:'shortDate' }} -> 5/16/2017<br>
+  {{ today | date:'mediumTime' }} -> 12:00:00 AM
+  {{ today | date:'shortTime' }} -> 12:00 AM
+
+  {{ today | date:'medium' }} -> May 16, 2017, 12:00:00 AM
+  {{ today | date:'short' }} -> 5/16/2017, 12:00 AM
+
+  <input [value]='number'> // will set the value property to 10
+  <input value='number'> // will set the value property to 'number'
+</div>
+
+

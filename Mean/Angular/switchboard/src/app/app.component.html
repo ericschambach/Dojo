@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center">
+  <h1>Switchboard</h1>
+  <div class="barcodecss" *ngFor='let color of barcolor' [ngStyle]="{'background-color': color, 'display': 'inline-block' }"></div>
+  <div class='{{div}}' action *ngFor='let div of listofdivs' *ngIf='div==' [ngStyle]="{'display': 'inline-block' }">{{div}}</div>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="switch" *ngFor="let switch of switches; let idx = index">
+      <button 
+      *ngIf="switch"
+      [ngClass]="{'on': switch}"
+      (click)="flipSwitch(idx)"
+      >ON</button>
+      <button 
+      *ngIf="!switch"
+      [ngClass]="{'on': switch}"
+      (click)="flipSwitch(idx)"
+      >OFF</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <form #quoteForm="ngForm" (submit)='onSubmit()'>
+    <label for="text">Your quote:</label>
+    <textarea name='text'
+    required
+    minlength="5"
+    maxlength="500"
+    [(ngModel)]="quote.text"
+    #text="ngModel">
+  </textarea><br>
+    <label for="author">Author Name:</label>
+    <input type='text' name='author'
+    required
+    minlength="4"
+    maxlength="25"
+    [(ngModel)]="quote.author"
+    #author="ngModel"/><br><br>
+    <input type="submit" value='Add Quote!' [hidden]='!quoteForm.valid'>
+  </form>
+  {{quote | json}}
+  {{quotes | json}}
+  <app-quote-list *ngFor='let quote of quotes; let i = index'
+    [text]='quote.text'
+    [author]='quote.author'
+    [totalvote]='quote.totalvote'
+    [index]='i'
+    (voteUp)="increaseRating($event)"
+    (voteDown)="decreaseRating($event)"
+    (deleteQuote)="delete($event)"
+    ></app-quote-list>
+</div>
